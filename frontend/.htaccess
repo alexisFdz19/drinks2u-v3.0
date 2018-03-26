@@ -1,0 +1,9 @@
+# que se vea el listado de contenidos de un listado
+
+Options All -Indexes
+
+# url Amigables
+
+RewriteEngine On
+
+RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?ruta=$1

@@ -1,0 +1,214 @@
+/*==============================================
+        =  Top =
+==============================================*/
+
+#top{
+	padding-top: 0px;
+}
+
+.divNav{
+	margin-top: 0px;
+}
+
+#top ul li{
+	display: inline;
+	line-height: 30px;
+	margin: 0px 5px;
+	color: white;
+}
+
+.social ul li a i{
+	font-size: 20px;
+}
+
+.ulRegistro{
+	margin-bottom: 0px;
+}
+
+.headerNav{
+	background-color: black;
+}
+
+/*==============================================
+        =  header =
+==============================================*/
+
+
+header #btnCategorias p{
+	margin-bottom: 0;
+	line-height: 35px;
+}
+
+#btnCategorias, #buscador, #carrito{
+	margin-top: 5px;
+}
+
+.btnCarrito{
+	margin-right: 8px;
+}
+
+#cabezote{
+	margin-top: 5px;
+}
+
+
+header #btnCategorias p span{
+	cursor: pointer;
+}
+
+.brandLogo{
+	font-size: 33px;
+	color: black;
+	font-family: 'Merriweather', serif;
+	padding: 20px 60px;
+	padding-left: 0px;
+}
+
+header #carrito p{
+	font-size: 11px;
+	border: 1px solid #aaa;
+}
+
+header #categorias{
+	display: none;
+	margin-top: 10px;
+	position: relative;
+}
+
+#headerNav{
+	background-color: #FFEB3B;
+}
+
+.pixelCategorias, .pixelSubCategoria{
+	color: black;
+}
+
+/*==============================================
+= Escritorio grande (LG 1336px en adelante)  =
+==============================================*/
+
+@media (min-width: 1200px) {
+		
+	/*==============================================
+        =  header =
+	==============================================*/
+	.brandLogo{
+		font-size: 33px;
+		color: black;
+		font-family: 'Merriweather', serif;
+		padding: 20px 60px;
+		padding-left: 0px;
+	}
+
+	header #carrito{
+	padding-left: 100px;
+	}
+
+}
+
+/*==============================================
+= Escritorio mediano o tablet acostada (MD 1024px)  =
+==============================================*/
+
+@media (max-width: 1119px) and (min-width: 992px){
+	
+	/*==============================================
+        =  header =
+	==============================================*/
+	.brandLogo{
+		font-size: 33px;
+		color: black;
+		font-family: 'Merriweather', serif;
+		padding: 20px 60px;
+		padding-left: 0px;
+	}
+	header #carrito{
+	padding-left: 70px;
+	}
+}
+
+
+/*==============================================
+= Escritorio pequeño o tablet vertical (SM 768px en adelante)  =
+==============================================*/
+
+@media (max-width: 991px) and (min-width: 768px){
+	
+	/*==============================================
+        =  header =
+	==============================================*/
+	.brandLogo{
+		font-size: 28px;
+		color: black;
+		font-family: 'Merriweather', serif;
+		padding: 20px 0px;
+	}
+
+	#logotipo{
+		padding-right: 0;
+		padding-left: 0; 
+	}
+	header #carrito{
+	padding-left: 55px;
+	}
+	header #carrito p{
+	display: none;
+	}
+	.btnCategorias{
+		padding-bottom: 5px;
+	}
+	#divCat{
+		padding-bottom: 10px;
+		padding-left: 30px;
+	}
+}
+
+/*==============================================
+= Movil (XS 320px)  =
+==============================================*/
+
+@media (max-width: 767px){
+	
+	/*==============================================
+        =  Top =
+	==============================================*/
+
+	#top ul{
+		text-align: center;
+		font-size: 10px;
+	}
+
+	.divNav{
+		padding: 0px;
+	}
+
+	#top #regitro{
+		borde
+	}
+
+	#ulRedes{
+		display: none;
+	}
+
+	/*==============================================
+        =  header =
+	==============================================*/
+	#logotipo{
+		text-align: center;
+	}
+	#logoContainer{
+		padding-right: 0px;
+	}
+	header #btnCategorias{
+	margin-bottom: 10px;
+	}
+	header #buscador{
+	margin-bottom: 10px;
+	}
+	header #carrito{
+	margin: 0px;
+	}
+	/* header #carrito p{
+	display: none;
+	} */
+}

@@ -1,0 +1,366 @@
+/*==============================================
+= 					slide				   		=
+==============================================*/
+
+#slide{
+
+	position: relative;
+	margin: auto;
+	width: 100%;
+	overflow: hidden;
+	padding: 0;
+}
+
+#slide ul{
+
+	position: relative;
+	left: 0%;
+	margin: auto;
+	height: auto;
+	width: 400%;
+	clear: both;
+	display: table;
+
+}
+
+#slide ul li{
+
+	position: relative;
+	float: left;
+	width: 25%;
+}
+
+#slide ul li img{
+
+	width: 100%;
+}
+
+#slide .slideOpcion1 img{
+	
+	position: absolute;
+	opacity: 1;
+	/*top: 1%;
+	right: 10%;
+	width: 25%;*/
+}
+
+
+#slide .slideOpcion1 .textosSlide{
+	
+	position: absolute;
+	/*width: 40%;
+	top: 20%;
+	left: 10%;*/
+}
+
+
+#slide .slideOpcion2 img{
+	
+	position: absolute;
+	opacity: 1;
+	/*top: 5%;
+	left: 15%;
+	width: 25%;*/
+}
+
+#slide .slideOpcion2 .textosSlide{
+	
+	position: absolute;
+	text-align: right;
+	/*width: 40%;
+	top: 15%;
+	right: 15%;*/
+}
+
+#slide .slideOpciones h1{
+	
+	text-transform: uppercase;
+	font-family: sans-serif;
+	opacity: 1;
+	top: -10%;
+	/*color: ;*/
+}
+
+#slide .slideOpciones h2{
+	
+	text-transform: uppercase;
+	font-family: sans-serif;
+	opacity: 1;
+	top: -10%;
+	/*color: ;*/
+}
+
+#slide .slideOpciones h3{
+	
+	text-transform: uppercase;
+	font-family: sans-serif;
+	opacity: 1;
+	top: -10%;
+	/*color: ;*/
+}
+
+
+#slide .slideOpcion1 button{
+	
+	border: 0px;
+	margin-top: 10px;
+	opacity: 1;
+	top: -10%;
+	
+}
+
+#slide .slideOpcion1 button:hover{
+	
+	background: #FFEB3B;
+	color: white;
+	border: 0px;
+}
+
+#slide .slideOpcion2 button:hover{
+	
+	background: #FFEB3B;
+	color: white;
+	border: 0px;
+}
+
+#slide .slideOpcion1 button span{
+	
+	margin-left: 10px;
+}
+
+/*==============================================
+= 					Flechas				   		=
+==============================================*/
+
+#slide .flechas{
+	position: absolute;
+	font-size: 2em;
+	color: white;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#slide #retroceder{
+	background: #666;
+	left: 0;
+	opacity: 1;
+}
+#slide #avanzar{
+	background: #666;
+	right: 0;
+	opacity: 1;
+}
+
+#slide #retroceder:hover, #slide #avanzar:hover{
+	background: #777;
+}
+
+#slide #retroceder:active, #slide #avanzar:active{
+	background: #444;
+}
+
+/*==============================================
+= 					paginación			   		=
+==============================================*/
+
+#slide #paginacion{
+	position: absolute;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	line-height: 40px;
+	font-size: 12px;
+	bottom: 0px;
+	left: 0;
+	z-index: 1;
+	background:rgb(0,0,0,.05); 
+}
+
+#slide #paginacion li{
+	display: inline-block;
+	margin: 0px 5px;
+	cursor: pointer;
+	opacity: 5;
+	color: #FFEB3B;
+	text-shadow: 0px 0px 5px #333;
+}
+
+#slide #paginacion li:first-child{
+	opacity: 1;
+	
+}
+
+/*==============================================
+= Escritorio grande (LG 1336px en adelante)  =
+==============================================*/
+
+@media (min-width: 1200px) {
+		
+	#slide #retroceder{
+
+		top: 37%;
+		padding: 40px 15px 40px 10px;
+		font-size: 22px;
+	}
+
+	#slide #avanzar{
+
+		top: 37%;
+		padding: 40px 10px 40px 15px;
+		font-size: 22px;
+	}
+
+
+	#slide .slideOpciones h1{
+
+		font-size: 50px;
+		margin-top: 5px;
+	}
+
+	#slide .slideOpciones h2{
+
+		font-size: 35px;
+	}
+	
+	#slide .slideOpciones h3{
+
+		font-size: 30px;
+	}
+
+	#slide .slideOpciones button{
+
+		margin-top: 10px;
+
+	}
+
+}
+
+/*==============================================
+= Escritorio mediano o tablet acostada (MD 1024px)  =
+==============================================*/
+
+@media (max-width: 1119px) and (min-width: 992px){
+	
+	#slide #retroceder{
+
+		top: 35%;
+		padding: 40px 15px 40px 10px;
+		font-size: 18px;
+	}
+
+	#slide #avanzar{
+
+		top: 35%;
+		padding: 40px 10px 40px 15px;
+		font-size: 18px;
+	}
+
+
+	#slide .slideOpciones h1{
+
+		font-size: 35px;
+		margin-top: 5px;
+	}
+
+	#slide .slideOpciones h2{
+
+		font-size: 30px;
+	}
+	
+	#slide .slideOpciones h3{
+
+		font-size: 20px;
+	}
+
+	#slide .slideOpciones button{
+
+		margin-top: 10px;
+		padding: 10px;
+
+	}
+	
+}
+
+
+/*==============================================
+= Escritorio pequeño o tablet vertical (SM 768px en adelante)  =
+==============================================*/
+
+@media (max-width: 991px) and (min-width: 768px){
+	
+	#slide #retroceder{
+
+		top: 35%;
+		padding: 30px 8px 30px 5px;
+		font-size: 14px;
+	}
+
+	#slide #avanzar{
+
+		top: 35%;
+		padding: 30px 5px 30px 8px;
+		font-size: 14px;
+	}
+
+
+	#slide .slideOpciones h1{
+
+		font-size: 25px;
+		margin-top: 5px;
+	}
+
+	#slide .slideOpciones h2{
+
+		font-size: 20px;
+	}
+	
+	#slide .slideOpciones h3{
+
+		font-size: 15px;
+	}
+
+	#slide .slideOpciones button{
+
+		margin-top: 10px;
+		padding: 5px 5px;
+
+	}
+}
+
+/*==============================================
+= Movil (XS 320px)  =
+==============================================*/
+
+@media (max-width: 767px){
+
+	#slide #retroceder, #slide #avanzar{
+
+		display: none;
+	}
+
+	#slide .slideOpciones h1{
+
+		font-size: 15px;
+		margin-top: 5px;
+		margin-bottom: -20px;
+	}
+
+	#slide .slideOpciones h2{
+
+		display: none;
+	}
+	
+	#slide .slideOpciones h3{
+
+		font-size: 10px;
+		margin-bottom: -5px;
+	}
+
+	#slide .slideOpciones button{
+
+		margin-top: 10px;
+		padding: 5px 5px;
+		font-size: 10px;
+	}
+	
+}
