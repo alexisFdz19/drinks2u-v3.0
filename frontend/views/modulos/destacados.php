@@ -32,29 +32,38 @@
 	$titulosModulos = array("Promociones","Lo más pedido","Lo más visto");
 	$rutaModulos = array("promociones", "lo-mas-pedido", "lo-mas-visto");
 
+	$base = 0;
+	$tope = 4;
+
 
 	if($titulosModulos[0] == "Promociones"){
 
-		$ordenar = "id_subcategoria";
+		$ordenar = "id";
+		$item = "id_categoria";
+		$valor = 6;
 
-		$promociones = ControladorProductos::ctrMostrarProductos($ordenar);
+		$promociones = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
 	}
 
 
 	if($titulosModulos[1] == "Lo más pedido"){
 
 		$ordenar = "ventas";
-		
+		$item = null;
+		$valor = null;
+
  
-		$ventas = ControladorProductos::ctrMostrarProductos($ordenar);
+		$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
 	}
 
 	if($titulosModulos[2] == "Lo más visto"){
 
 		$ordenar = "vistas";
-		
+		$item = null;
+		$valor = null;
 
-		$vistas = ControladorProductos::ctrMostrarProductos($ordenar);
+
+		$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
 	}
 
 	$modulos = array($promociones, $ventas, $vistas);

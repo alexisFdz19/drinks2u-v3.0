@@ -2,6 +2,7 @@
 
 
 $servidor = Ruta::ctrRutaServidor();
+$url = Ruta::ctrRuta();
 
 
 ?>
@@ -85,7 +86,7 @@ $servidor = Ruta::ctrRutaServidor();
 
 			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="logotipo">
 				
-				<a href="index.php" id="logoContainer" class="brandLogo">Drinks2u
+				<a href="<?php echo $url; ?>" id="logoContainer" class="brandLogo">Drinks2u
 
 					<!--<img src="<?php echo $servidor.$social["logo"]; ?>" class="img-responsive">-->
 

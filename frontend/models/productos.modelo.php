@@ -58,17 +58,32 @@ class ModeloProductos{
 	=            Mostrar los productos           =
 	=============================================*/
 
-	static public function mdlMostrarProductos($tabla, $ordenar){
+	static public function mdlMostrarProductos($tabla, $ordenar, $item, $valor, $base, $tope){
 
-		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC LIMIT 4");
+		if($item != null){
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY $ordenar DESC LIMIT $base, $tope");
+
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		}else{
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC LIMIT $base, $tope");
 
 		$stmt -> execute();
 
 		return $stmt -> fetchAll();
 
-		$stmt -> close(); 
+	}
 
-		$stmt = null;
+	$stmt -> close(); 
+
+	$stmt = null;
+
 	}
 
 	/*=============================================
@@ -88,6 +103,38 @@ class ModeloProductos{
 		$stmt -> close(); 
 
 		$stmt = null; 
+	}
+
+	/*=============================================
+	=            Listar productos        =
+	=============================================*/
+
+	static public function mdlListarProductos($tabla, $ordenar, $item, $valor){
+
+		if($item != null){
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item =:$item ORDER BY $ordenar DESC");
+
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		}else{
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC");
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		}
+
+		$stmt -> close(); 
+
+		$stmt = null; 
+
 	}
 
 }
