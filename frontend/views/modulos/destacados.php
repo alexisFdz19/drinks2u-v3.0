@@ -41,8 +41,9 @@
 		$ordenar = "id";
 		$item = "id_categoria";
 		$valor = 6;
+		$modo = "DESC";
 
-		$promociones = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
+		$promociones = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 	}
 
 
@@ -51,9 +52,9 @@
 		$ordenar = "ventas";
 		$item = null;
 		$valor = null;
-
+		$modo = "DESC";
  
-		$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
+		$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 	}
 
 	if($titulosModulos[2] == "Lo más visto"){
@@ -61,9 +62,9 @@
 		$ordenar = "vistas";
 		$item = null;
 		$valor = null;
+		$modo = "DESC";
 
-
-		$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
+		$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 	}
 
 	$modulos = array($promociones, $ventas, $vistas);

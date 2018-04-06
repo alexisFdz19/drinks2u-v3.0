@@ -44,9 +44,13 @@
 					Ordenar productos <span class="caret"></span></button>
 
 					<ul class="dropdown-menu" role="menu">
+
+					<?php
 						
-						<li><a href="#">Más reciente</a></li>
-						<li><a href="#">Más antiguo</a></li>
+						echo '<li><a href="'.$url.$rutas[0].'/1/recientes">Más reciente</a></li>
+							  <li><a href="'.$url.$rutas[0].'/1/antiguos">Más antiguo</a></li>';
+
+					?>
 
 					</ul>
 
@@ -113,7 +117,27 @@
 			=            Llamado de paginación            =
 			=============================================*/
 
-			if(isset($rutas[1])) {
+			if(isset($rutas[1])){
+
+				if (isset($rutas[2])){
+					
+					if ($rutas[2] == "antiguos"){
+						
+						$modo = "ASC";
+						$_SESSION["ordenar"] = "ASC";
+
+					}else{
+
+						$modo = "DESC";
+						$_SESSION["ordenar"] = "DESC";
+
+					}
+
+				}else{
+
+					$modo = $_SESSION["ordenar"];
+
+				}
 				
 				$base = ($rutas[1] - 1)*12;
 				$tope = 12;
@@ -123,6 +147,8 @@
 				$rutas[1] = 1;
 				$base = 0;
 				$tope = 12;
+				$modo = "DESC";
+
 			}
 
 			/*=============================================
@@ -172,7 +198,7 @@
 				}
 			}
 
-			$productos = ControladorProductos::ctrMostrarProductos($ordenar, $item2, $valor2, $base, $tope);
+			$productos = ControladorProductos::ctrMostrarProductos($ordenar, $item2, $valor2, $base, $tope, $modo);
 			$listaProductos = ControladorProductos::ctrListarProductos($ordenar, $item2, $valor2);
 
 			if (!$productos) {

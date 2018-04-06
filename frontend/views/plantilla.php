@@ -18,6 +18,8 @@
 
     <?php
 
+        session_start();
+
         $servidor = Ruta::ctrRutaServidor();
 
         /*==============================================
