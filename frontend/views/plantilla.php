@@ -152,6 +152,8 @@
 <script src="<?php echo $url; ?>views/js/plugins/jquery.easing.js"></script>
 <script src="<?php echo $url; ?>views/js/plugins/jquery.scrollUp.js"></script>
 
+
+<input type="hidden" value="<?php echo $url; ?>" id="rutaOculta">
 <!--=====================================
 =     javascript personalizado   =
 ======================================-->
