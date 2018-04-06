@@ -95,3 +95,12 @@ if (pagActiva != null) {
 
 }
 
+/*==============================================
+= Enlaces paginación  =
+==============================================*/
+
+var url = window.location.href;
+
+var indice = url.split("/");
+
+$("#item"+indice.pop()).addClass("active");
