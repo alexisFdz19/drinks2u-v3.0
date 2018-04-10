@@ -42,7 +42,7 @@ class ControladorProductos{
 	}
 
 	/*=============================================
-	=            Mostrar info productos        =
+	=            Mostrar info producto        =
 	=============================================*/
 
 	static public function ctrMostrarInfoProducto($item, $valor){
@@ -63,6 +63,19 @@ class ControladorProductos{
 		$tabla = "productos";
 
 		$respuesta = ModeloProductos::mdlListarProductos($tabla, $ordenar, $item, $valor);
+
+		return $respuesta;
+	}
+
+	/*=============================================
+	=            Mostrar banner           =
+	=============================================*/
+
+	static public function ctrMostrarBanner($ruta){
+
+		$tabla = "banner";
+
+		$respuesta = ModeloProductos::mdlMostrarBanner($tabla, $ruta);
 
 		return $respuesta;
 	}

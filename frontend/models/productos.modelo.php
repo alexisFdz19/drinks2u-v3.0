@@ -87,7 +87,7 @@ class ModeloProductos{
 	}
 
 	/*=============================================
-	=            Mostrar info productos        =
+	=            Mostrar info producto       =
 	=============================================*/
 
 	static public function mdlMostrarInfoProducto($tabla, $item, $valor){
@@ -135,6 +135,25 @@ class ModeloProductos{
 
 		$stmt = null; 
 
+	}
+
+	/*=============================================
+	=            Mostrar banner        =
+	=============================================*/
+
+	static public function mdlMostrarBanner($tabla, $ruta){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE ruta = :ruta");
+
+		$stmt -> bindParam(":ruta", $ruta, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close(); 
+
+		$stmt = null; 
 	}
 
 }

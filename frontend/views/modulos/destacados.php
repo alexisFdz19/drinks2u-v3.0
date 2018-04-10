@@ -1,33 +1,38 @@
-<?php
-
-	$servidor = Ruta::ctrRutaServidor();
-
-
-?>
-
-
 <!--=============================================
 =            Banner           =
 =============================================-->
 
-
-<figure class="banner">
-	
-	<img src="http://localhost/proyect/drinks2u3/backend/views/img/banner/banner2.jpg" class="img-responsive" width="100%">
-
-	<div class="textoBanner textoDer">
-		
-		<h1 style="color: white">TUS BEBIDAS</h1>
-
-		<h2 style="color: white"></h2>
-
-		<h3 style="color: white">A domicilio en 4 pasos</h3>
-
-	</div>
-
-</figure>
-
 <?php
+
+	$servidor = Ruta::ctrRutaServidor();
+
+	$ruta = "sin-categoria";
+
+	$banner = ControladorProductos::ctrMostrarBanner($ruta);
+
+	$titulo1 = json_decode($banner["titulo1"],true);
+	$titulo2 = json_decode($banner["titulo2"],true);
+	$titulo3 = json_decode($banner["titulo3"],true);
+
+	if($banner != null){
+
+	echo '<figure class="banner">
+	
+				<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%">
+
+				<div class="textoBanner '.$banner["estilo"].'">
+					
+					<h1 style="color: '.$titulo1["color"].'">'.$titulo1["texto"].'</h1>
+
+					<h2 style="color: '.$titulo2["color"].'">'.$titulo2["texto"].'</h2>
+
+					<h3 style="color: '.$titulo3["color"].'">'.$titulo3["texto"].'</h3>
+
+				</div>
+
+			</figure>';
+	}
+
 
 	$titulosModulos = array("Promociones","Lo más pedido","Lo más visto");
 	$rutaModulos = array("promociones", "lo-mas-pedido", "lo-mas-visto");

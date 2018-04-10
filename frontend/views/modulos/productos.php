@@ -1,30 +1,41 @@
+<!--=============================================
+=            Banner           =
+=============================================-->
+
 <?php
 
 	$servidor = Ruta::ctrRutaServidor();
 	$url = Ruta::ctrRuta();
 
-?>
+	$ruta = $rutas[0];
 
-<!--=============================================
-=            Banner           =
-=============================================-->
+	$banner = ControladorProductos::ctrMostrarBanner($ruta);
 
+	$titulo1 = json_decode($banner["titulo1"],true);
+	$titulo2 = json_decode($banner["titulo2"],true);
+	$titulo3 = json_decode($banner["titulo3"],true);
 
-<figure class="banner">
+	if($banner != null){
+
+	echo '<figure class="banner">
 	
-	<img src="http://localhost/proyect/drinks2u3/backend/views/img/banner/banner2.jpg" class="img-responsive" width="100%">
+				<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%">
 
-	<div class="textoBanner textoDer">
-		
-		<h1 style="color: white">TUS BEBIDAS</h1>
+				<div class="textoBanner '.$banner["estilo"].'">
+					
+					<h1 style="color: '.$titulo1["color"].'">'.$titulo1["texto"].'</h1>
 
-		<h2 style="color: white"></h2>
+					<h2 style="color: '.$titulo2["color"].'">'.$titulo2["texto"].'</h2>
 
-		<h3 style="color: white">A domicilio en 4 pasos</h3>
+					<h3 style="color: '.$titulo3["color"].'">'.$titulo3["texto"].'</h3>
 
-	</div>
+				</div>
 
-</figure>
+			</figure>';
+
+	}
+
+?>
 
 <!--=============================================
 =            Barra de productos           =
