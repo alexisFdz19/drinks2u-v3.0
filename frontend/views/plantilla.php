@@ -130,6 +130,10 @@
 
                 include "modulos/infoproducto.php";
 
+            }else if($rutas[0] == "buscador"){
+
+                include "modulos/buscador.php";
+
             }else{
 
                 include "modulos/error404.php";
@@ -160,6 +164,7 @@
 =     javascript personalizado   =
 ======================================-->
 
+<script src="<?php echo $url; ?>views/js/buscador.js"></script>
 <script src="<?php echo $url; ?>views/js/cabezote.js"></script>
 <script src="<?php echo $url; ?>views/js/slide.js"></script>
 <script src="<?php echo $url; ?>views/js/plantilla.js"></script>
