@@ -62,18 +62,20 @@ $(window).scroll(function(){
 
 	if(window.matchMedia("(min-width:768px)").matches){
 
-		if(scrollY < ($(".banner").offset().top)-100){
+		if($(".banner").html() != null){
+
+			if(scrollY < ($(".banner").offset().top)-100){
 
 			$(".banner img").css({"margin-top":-scrollY/2+"px"})
 
-		}else{
+			}else{
 
-			scrollY = 0;
+				scrollY = 0;
+			}
+
 		}
 
 	}
-	
-	
 
 })
 
