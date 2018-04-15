@@ -146,7 +146,15 @@
 
 				}else{
 
-					$modo = $_SESSION["ordenar"];
+					if (isset($_SESSION["ordenar"])){
+						
+						$modo = $_SESSION["ordenar"];
+
+					}else{
+
+						$modo = "DESC";
+
+					}
 
 				}
 				
@@ -232,7 +240,7 @@
 
 								<figure>
 
-									<a href="'.$value["ruta"].'" class="pixelProducto">
+									<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 				
 										<img src="'.$servidor.$value["portada"].'" class="img-responsive">
 
@@ -246,7 +254,7 @@
 				
 									<small>
 									
-										<a href="'.$value["ruta"].'" class="pixelProducto">
+										<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 										
 											'.$value["titulo"].'<br>';
 
@@ -281,7 +289,7 @@
 
 										</button>
 
-										<a href="'.$value["ruta"].'" class="pixelProducto">
+										<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 										
 											<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
 											
@@ -312,7 +320,7 @@
 
 								<figure>
 								
-									<a href="'.$value["ruta"].'" class="pixelProducto">
+									<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 
 										<img src="'.$servidor.$value["portada"].'" class="img-responsive">
 
@@ -328,7 +336,7 @@
 							
 									<small>
 								
-										<a href="'.$value["ruta"].'" class="pixelProducto">
+										<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 									
 											'.$value["titulo"].'<br>';
 
@@ -360,7 +368,7 @@
 
 									</button>
 
-									<a href="'.$value["ruta"].'" class="pixelProducto">
+									<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 										
 										<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
 											

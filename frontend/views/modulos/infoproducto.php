@@ -315,15 +315,23 @@ $url = ruta::ctrRuta();
 
 				</div>
 
-				<hr>
-
 				<!--=============================================
 				=            Botones de compra         =
 				=============================================-->
 
-				<div class="row text-center">
+				<div class="row">
 					
-					
+					<div class="col-md-6 col-xs-12">
+						
+						<button class="btn btn-default btn-block btn-lg backColorN">
+							
+						Agregar al carrito
+
+						<i class="fa fa-shopping-cart"></i>
+
+						</button>
+
+					</div>
 
 				</div>
 
