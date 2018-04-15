@@ -34,3 +34,37 @@
 	margin-left: -50%;
 	width: 160%;
 }
+
+.compartirRedes{
+	
+	border: 0px;
+	box-shadow: none;
+	margin: 0px;
+
+}
+
+.btnFacebook{
+
+	background: #46639f;
+	color: white;
+	text-align: center;
+	line-height: 30px;
+	padding: 8px;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+.btnGoogle{
+
+	background: #d6513e;
+	color: white;
+	text-align: center;
+	line-height: 30px;
+	padding: 8px;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
