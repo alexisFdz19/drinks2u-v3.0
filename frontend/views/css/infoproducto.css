@@ -68,3 +68,16 @@
 	margin-bottom: 20px;
 	cursor: pointer;
 }
+
+/*==============================================
+=    Movil (XS de 320px en adelante)     =
+==============================================*/
+
+@media (max-width: 767px) {
+
+	.fondoBreadcrumb{
+
+		font-size: 12px;
+	}
+	
+}
