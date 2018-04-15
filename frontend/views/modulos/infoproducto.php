@@ -45,6 +45,8 @@ $url = ruta::ctrRuta();
 				$valor = $rutas[0];
 				$infoproducto = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
+				$multimedia = json_decode($infoproducto["multimedia"], true);
+
 			?>
 			
 			<!--=============================================
@@ -54,8 +56,16 @@ $url = ruta::ctrRuta();
 			<div class="col-md-5 col-sm-6 col-xs-12 visorImg">
 
 				<figure class="visor">
-					
-					<img id="lupa1" class="img-thumbnail" src="http://localhost:8080/proyect/drinks2u3/backend/views/img/productos/cerveza/tecate/12packtecateoriginal355ml.png">
+
+					<?php
+
+						for ($i = 0; $i < count($multimedia); $i++) { 
+							
+							echo '<img id="lupa'.($i+1).'" class="img-thumbnail" src="'.$servidor.$multimedia[$i]["foto"].'" alt="'.$infoproducto["titulo"].'" >';
+
+						}
+
+					?>
 
 				</figure>
 
@@ -63,11 +73,18 @@ $url = ruta::ctrRuta();
 
 				  <ul class="slides">
 
-				    <li>
+				  	<?php
 
-				      <img value="1" class="img-thumbnail" src="http://localhost:8080/proyect/drinks2u3/backend/views/img/productos/cerveza/tecate/12packtecateoriginal355ml.png" alt="12 pack Tecate Original 355ml" />
+				  		for ($i = 0; $i < count($multimedia); $i++) { 
+						
+							echo ' <li>
 
-				    </li>
+								      <img value="'.($i+1).'" class="img-thumbnail" src="'.$servidor.$multimedia[$i]["foto"].'"/>
+
+								    </li>';
+						}
+
+				  	?>
 
 				  </ul>
 
@@ -220,13 +237,13 @@ $url = ruta::ctrRuta();
 								echo '<div class="col-xs-12">
 
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-beer"></i> '.$detalles["Contenido"].'
+										<i style="margin-right: 10px;"class="fa fa-beer"></i> Contenido: '.$detalles["Contenido"].'
 									</li>
 									<li>
 										<i style="margin-right: 10px;"class="fa fa-glass"></i> '.$detalles["Porcentaje de alcohol"].'
 									</li>
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-flag"></i> '.$detalles["País de procedencia"].'
+										<i style="margin-right: 10px;"class="fa fa-flag"></i> País de procedencia: '.$detalles["País de procedencia"].'
 									</li>
 
 								</div>';
@@ -236,13 +253,13 @@ $url = ruta::ctrRuta();
 								echo '<div class="col-xs-12">
 
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-beer"></i> '.$detalles["Contenido"].'
+										<i style="margin-right: 10px;"class="fa fa-beer"></i> Contenido: '.$detalles["Contenido"].'
 									</li>
 									<li>
 										<i style="margin-right: 10px;"class="fa fa-glass"></i> '.$detalles["Porcentaje de alcohol"].'
 									</li>
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-flag"></i> '.$detalles["País de procedencia"].'
+										<i style="margin-right: 10px;"class="fa fa-flag"></i> País de procedencia: '.$detalles["País de procedencia"].'
 									</li>
 
 								</div>';
@@ -252,13 +269,13 @@ $url = ruta::ctrRuta();
 								echo '<div class="col-xs-12">
 
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-beer"></i> '.$detalles["Contenido"].'
+										<i style="margin-right: 10px;"class="fa fa-beer"></i> Contenido: '.$detalles["Contenido"].'
 									</li>
 									<li>
 										<i style="margin-right: 10px;"class="fa fa-glass"></i> '.$detalles["Porcentaje de alcohol"].'
 									</li>
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-flag"></i> '.$detalles["País de procedencia"].'
+										<i style="margin-right: 10px;"class="fa fa-flag"></i> País de procedencia: '.$detalles["País de procedencia"].'
 									</li>
 
 								</div>';
@@ -268,13 +285,13 @@ $url = ruta::ctrRuta();
 								echo '<div style="margin-right: 10px;"class="col-xs-12">
 
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-stop-circle-o"></i> '.$detalles["Contenido"].'
+										<i style="margin-right: 10px;"class="fa fa-stop-circle-o"></i> Contenido: '.$detalles["Contenido"].'
 									</li>
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-pie-chart"></i> '.$detalles["Sabor"].'
+										<i style="margin-right: 10px;"class="fa fa-pie-chart"></i> Sabor: '.$detalles["Sabor"].'
 									</li>
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-hourglass"></i> '.$detalles["Ingredientes"].'
+										<i style="margin-right: 10px;"class="fa fa-hourglass"></i> Ingredientes: '.$detalles["Ingredientes"].'
 									</li>
 
 								</div>';
@@ -284,7 +301,7 @@ $url = ruta::ctrRuta();
 								echo '<div style="margin-right: 10px;"class="col-xs-12">
 
 									<li>
-										<i style="margin-right: 10px;"class="fa fa-cube"></i> '.$detalles["Contenido"].'
+										<i style="margin-right: 10px;"class="fa fa-cube"></i> Contenido: '.$detalles["Contenido"].'
 									</li>
 
 								</div>';
