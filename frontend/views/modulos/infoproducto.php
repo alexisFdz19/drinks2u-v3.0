@@ -366,6 +366,169 @@ $url = ruta::ctrRuta();
 
 		</div>
 
+		<!--=====================================
+		COMENTARIOS
+		======================================-->
+
+		<br>
+
+		<div class="row">
+			
+			<ul class="nav nav-tabs">
+				
+					<li class="active"><a>COMENTARIOS 22</a></li>
+					<li><a href="">Ver más</a></li>
+					<li class="pull-right"><a class="text-muted">PROMEDIO DE CALIFICACIÓN: 3.5 | 
+
+						<i class="fa fa-star text-success"></i>
+						<i class="fa fa-star text-success"></i>
+						<i class="fa fa-star text-success"></i>
+						<i class="fa fa-star-half-o text-success"></i>
+						<i class="fa fa-star-o text-success"></i>
+					
+					</a></li>
+
+			</ul>
+
+			<br>
+
+		</div>
+
+		<div class="row comentarios">
+			
+			<div class="panel-group col-md-3 col-sm-6 col-xs-12">
+				
+				<div class="panel panel-default">
+			      
+			      <div class="panel-heading text-uppercase">
+
+			      	Andrés Felipe
+			      	<span class="text-right">
+			      		<img class="img-circle" src="<?php echo $url; ?>views/img/usuarios/40/944.jpg" width="20%">
+
+			      	</span>
+
+			      </div>
+			     
+			      <div class="panel-body">
+
+			      	<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro omnis molestias consequuntur quaerat illo aliquid, commodi iste quam laboriosam quas voluptate tempore distinctio dolore dolorem, ut, minus vitae unde optio.</small>
+
+			      </div>
+
+			      <div class="panel-footer">
+			      	
+			      	<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star-half-o text-success"></i>
+					<i class="fa fa-star-o text-success"></i>
+
+			      </div>
+			    
+			    </div>
+
+			</div>
+
+			<div class="panel-group col-md-3 col-sm-6 col-xs-12">
+				
+				<div class="panel panel-default">
+			      
+			      <div class="panel-heading text-uppercase">
+
+			      	Andrés Felipe
+			      	<span class="text-right">
+			      		<img class="img-circle" src="<?php echo $url; ?>views/img/usuarios/40/944.jpg" width="20%">
+
+			      	</span>
+
+			      </div>
+			     
+			      <div class="panel-body"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro omnis molestias consequuntur quaerat illo aliquid, commodi iste quam laboriosam quas voluptate tempore distinctio dolore dolorem, ut, minus vitae unde optio.</small></div>
+
+			      <div class="panel-footer">
+			      	
+			      	<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star-half-o text-success"></i>
+					<i class="fa fa-star-o text-success"></i>
+
+			      </div>
+			    
+			    </div>
+
+			</div>
+
+			<div class="panel-group col-md-3 col-sm-6 col-xs-12">
+				
+				<div class="panel panel-default">
+			      
+			      <div class="panel-heading text-uppercase">
+
+			      	Andrés Felipe
+			      	<span class="text-right">
+			      		<img class="img-circle" src="<?php echo $url; ?>views/img/usuarios/40/944.jpg" width="20%">
+
+			      	</span>
+
+			      </div>
+			     
+			      <div class="panel-body"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro omnis molestias consequuntur quaerat illo aliquid, commodi iste quam laboriosam quas voluptate tempore distinctio dolore dolorem, ut, minus vitae unde optio.</small></div>
+
+			      <div class="panel-footer">
+			      	
+			      	<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star-half-o text-success"></i>
+					<i class="fa fa-star-o text-success"></i>
+
+			      </div>
+			    
+			    </div>
+
+			</div>
+
+			<div class="panel-group col-md-3 col-sm-6 col-xs-12">
+				
+				<div class="panel panel-default">
+			      
+			      <div class="panel-heading text-uppercase">
+
+			      	Andrés Felipe
+			      		<span class="text-right">
+			      			<img class="img-circle" src="<?php echo $url; ?>views/img/usuarios/40/944.jpg" width="20%">
+
+			      		</span>
+
+			      </div>
+			     
+			      <div class="panel-body"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro omnis molestias consequuntur quaerat illo aliquid, commodi iste quam laboriosam quas voluptate tempore distinctio dolore dolorem, ut, minus vitae unde optio.</small></div>
+
+			      <div class="panel-footer">
+			      	
+			      	<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star text-success"></i>
+					<i class="fa fa-star-half-o text-success"></i>
+					<i class="fa fa-star-o text-success"></i>
+
+			      </div>
+			    
+			    </div>
+
+			</div>
+		
+		</div>
+
+		<hr>
+
+	</div>
+
+	</div>
+
+
 	</div>
 
 </div>
