@@ -526,8 +526,164 @@ $url = ruta::ctrRuta();
 
 	</div>
 
-	</div>
+</div>
 
+<!--=====================================
+Articulos relacionados
+======================================-->
+
+<div class="container-fluid productos">
+
+	<div class="container">
+
+		<div class="row">
+
+
+
+			<div class="col-xs-12 tituloDestacado">
+
+
+
+				<div class="col-sm-6 col-xs-12">
+
+					<h1><small>También tenemos para ti</small></h1>
+
+				</div>
+
+				<div class="col-sm-6 col-xs-12">
+
+				<?php
+
+					$item = "id";
+					$valor = $infoproducto["id_subcategoria"];
+
+					$rutaArticulosDestacados = ControladorProductos::ctrMostrarSubcategorias($item, $valor);
+
+					echo '<a href="'.$url.$rutaArticulosDestacados[0]["ruta"].'">
+				
+							<button class="btn btn-default backColorN pull-right">
+					
+								Ver más <span class="fa fa-chevron-right"></span>
+
+							</button>
+
+						</a>';
+
+				?>
+
+				</div>
+
+
+
+			</div>
+
+			<div class="clearfix"></div>
+
+			<hr>
+
+		</div>
+
+		<?php
+
+			$ordenar = ""; 
+			$item = "id_subcategoria";
+			$valor = $infoproducto["id_subcategoria"];
+			$base = 0;
+			$tope = 4;
+			$modo = "Rand()";
+
+			$relacionados = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
+
+			if(!$relacionados){
+
+				echo '<div class="col-xs-12 error404">
+
+					<h1><small>Lo sentimos<small><h1>
+
+					<h2>No hay productos relacionados<h2>
+
+				</div>';
+
+			}else{
+
+				echo '<ul class="grid0">';
+
+				foreach ($relacionados as $key => $value) {
+				
+				echo '<li class="col-md-3 col-sm-6 col-xs-12">
+
+						<figure>
+
+							<a href="'.$url.$value["ruta"].'" class="pixelProducto">
+		
+								<img src="'.$servidor.$value["portada"].'" class="img-responsive">
+
+							</a>
+
+						</figure>
+
+						<h4>
+		
+							<small>
+							
+								<a href="'.$url.$value["ruta"].'" class="pixelProducto">
+								
+									'.$value["titulo"].'<br>';
+
+
+									if ($value["nuevo"] != 0) {
+										
+										echo '<span class="label label-warning fontSize">Nuevo</span>';
+									}
+									
+
+								echo '</a>
+
+							</small>
+
+
+						</h4>
+
+						<div class="col-xs-6 precio">
+		
+							<h2><small>$ '.$value["precio"].' MXN</small></h2>
+
+						</div>
+
+
+						<div class="col-xs-6 enlaces">
+
+							<div class="btn-group pull-right">
+							
+								<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="'.$value["id"].'" imagen="'.$ruta.$value["portada"].'" titulo="'.$value["titulo"].'" title="Agregar al carrito" precio="'.$value["precio"].'" data-toggle="tooltip" title="Agregar al carrito">
+								
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+								</button>
+
+								<a href="'.$url.$value["ruta"].'" class="pixelProducto">
+								
+									<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+									
+										<i class="fa fa-eye" aria-hidden="true"></i>
+
+									</button>
+
+								</a>
+
+							</div>
+
+						</div>
+
+					</li>';
+			
+				}
+
+			echo '</ul>';
+
+		}
+
+		?>
 
 	</div>
 
