@@ -322,7 +322,7 @@ $url = ruta::ctrRuta();
 							<span class="label label-default" style="font-weight:700">
 
 								<i class="fa fa-cart-arrow-down" style="margin-right: 5px;"></i> '.$infoproducto["ventas"].' Ventas |
-								<i class="fa fa-eye" style="margin: 0px 5px;"></i> Visto por '.$infoproducto["vistas"].' personas
+								<i class="fa fa-eye" style="margin: 0px 5px;"></i> Visto por <span class="vistas">'.$infoproducto["vistas"].'</span> personas
 
 							</span>
 

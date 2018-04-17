@@ -167,11 +167,11 @@
 =     javascript personalizado   =
 ======================================-->
 
-<script src="<?php echo $url; ?>views/js/infoproducto.js"></script>
-<script src="<?php echo $url; ?>views/js/buscador.js"></script>
 <script src="<?php echo $url; ?>views/js/cabezote.js"></script>
-<script src="<?php echo $url; ?>views/js/slide.js"></script>
 <script src="<?php echo $url; ?>views/js/plantilla.js"></script>
+<script src="<?php echo $url; ?>views/js/slide.js"></script>
+<script src="<?php echo $url; ?>views/js/buscador.js"></script>
+<script src="<?php echo $url; ?>views/js/infoproducto.js"></script>
 
 </body>
 </html>

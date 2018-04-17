@@ -63,3 +63,50 @@ $(".infoproducto figure.visor img").mousemove(function(event){
 	})
 
 })
+
+/*==============================================
+=  Contador de vistas de productos     =
+==============================================*/
+
+var contador = 0;
+
+$(window).on("load", function(){
+
+	var vistas = $("span.vistas").html();
+	
+
+	contador = Number(vistas) + 1;
+
+	$("span.vistas").html(contador);
+
+	var item = "vistas";
+
+	// Se evalúa la ruta para definir el producto a actualizar
+
+	var urlActual = location.pathname;
+	var ruta = urlActual.split("/");
+
+	var datos = new FormData();
+
+	datos.append("valor", contador);
+	datos.append("item", item);
+	datos.append("ruta", ruta.pop());
+
+	$.ajax({
+
+		url:rutaOculta+"ajax/producto.ajax.php",
+		method:"POST",
+		data: datos,
+		cache: false,
+		contentType: false,
+		processData: false,
+		success: function(respuesta){
+
+			//console.log("respuesta", respuesta);
+
+		}
+
+	});
+
+
+})
