@@ -84,6 +84,79 @@ header #categorias{
 }
 
 /*==============================================
+        =  Ventanas modales =
+==============================================*/
+
+.modalTitulo{
+
+	padding: 5px 0px;
+
+}
+
+.modalTitulo h3{
+
+	text-align: center;
+	margin-top: -5px;
+	padding: 15px 0px;
+	border-radius: 5px 5px 0px 0px;
+
+}
+
+.modalFormulario .close{
+
+	position: absolute;
+	right: 27px;
+	top: 15px;
+	color: black;
+}
+
+.modalFormulario .facebook, .modalFormulario .google{
+
+	cursor: pointer;
+}
+
+.modalFormulario .facebook p{
+
+	background: #46639f;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	padding: 8px;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+
+}
+
+.modalFormulario .google p{
+
+	background: #d6513e;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	padding: 8px;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+
+}
+
+.modalFormulario p i{
+
+	margin-left: -25px;
+	margin-right: 5px;
+	font-size: 20px;
+}
+
+.modalFormulario .form-group{
+
+	padding-left: 20px;
+	padding-right: 20px;
+
+}
+
+
+/*==============================================
 = Escritorio grande (LG 1336px en adelante)  =
 ==============================================*/
 
@@ -102,6 +175,12 @@ header #categorias{
 
 	header #carrito{
 	padding-left: 100px;
+	}
+
+	.modalFormulario .facebook p{
+
+	margin-right: -15px;
+
 	}
 
 }
@@ -124,6 +203,12 @@ header #categorias{
 	}
 	header #carrito{
 	padding-left: 70px;
+	}
+
+	.modalFormulario .facebook p{
+
+	margin-right: -15px;
+
 	}
 }
 
@@ -160,6 +245,11 @@ header #categorias{
 	#divCat{
 		padding-bottom: 10px;
 		padding-left: 30px;
+	}
+	.modalFormulario .facebook p{
+
+	margin-right: -15px;
+
 	}
 }
 
@@ -211,4 +301,15 @@ header #categorias{
 	/* header #carrito p{
 	display: none;
 	} */
+	.modalFormulario .google p{
+
+	margin-top: -15px;
+
+	}
+	.modalFormulario .backColorYN{
+
+	font-size: 15px;
+
+	}
+
 }

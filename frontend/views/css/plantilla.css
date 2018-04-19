@@ -49,6 +49,12 @@ a:visited, a:link, a:focus, a:hover, a:active{
 	color: white;
 }
 
+.backColorYN{
+	
+	background: #FFEB3B;
+	color: black;
+}
+
 .fondoBreadcrumb{
 
 	margin-bottom: 10px;
