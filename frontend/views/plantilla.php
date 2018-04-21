@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="<?php echo $url; ?>views/css/plugins/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/plugins/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/plugins/flexslider.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/plugins/sweetalert.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
 
@@ -53,6 +54,18 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/slide.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/productos.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/infoproducto.css">
+
+
+    <!--=====================================
+    =     Plugins de javascript   =
+    ======================================-->
+
+    <script src="<?php echo $url; ?>views/js/plugins/jquery.min.js"></script>
+    <script src="<?php echo $url; ?>views/js/plugins/bootstrap.min.js"></script>
+    <script src="<?php echo $url; ?>views/js/plugins/jquery.easing.js"></script>
+    <script src="<?php echo $url; ?>views/js/plugins/jquery.scrollUp.js"></script>
+    <script src="<?php echo $url; ?>views/js/plugins/jquery.flexslider.js"></script>
+    <script src="<?php echo $url; ?>views/js/plugins/sweetalert.min.js"></script>
     
 </head>
 <body>
@@ -151,17 +164,6 @@
     ?>
 
 
-<!--=====================================
-=     Plugins de javascript   =
-======================================-->
-
-<script src="<?php echo $url; ?>views/js/plugins/jquery.min.js"></script>
-<script src="<?php echo $url; ?>views/js/plugins/bootstrap.min.js"></script>
-<script src="<?php echo $url; ?>views/js/plugins/jquery.easing.js"></script>
-<script src="<?php echo $url; ?>views/js/plugins/jquery.scrollUp.js"></script>
-<script src="<?php echo $url; ?>views/js/plugins/jquery.flexslider.js"></script>
-
-
 <input type="hidden" value="<?php echo $url; ?>" id="rutaOculta">
 <!--=====================================
 =     javascript personalizado   =
@@ -172,6 +174,7 @@
 <script src="<?php echo $url; ?>views/js/slide.js"></script>
 <script src="<?php echo $url; ?>views/js/buscador.js"></script>
 <script src="<?php echo $url; ?>views/js/infoproducto.js"></script>
+<script src="<?php echo $url; ?>views/js/usuarios.js"></script>
 
 </body>
 </html>

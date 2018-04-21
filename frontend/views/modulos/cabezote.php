@@ -250,13 +250,15 @@ $url = Ruta::ctrRuta();
 
 			</div>
 
+			<br>
+
 			<!--==============================================
         	=  formulario de registro directo =
 			==============================================-->
 
 			<form method="POST" onsubmit="return registroUsuario()">
-				
-				<br>
+				 
+				<hr>
 
 				<div class="form-group">
 					
@@ -308,27 +310,51 @@ $url = Ruta::ctrRuta();
 
 				</div>
 
+				<div class="form-group">
+					
+					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-earphone"></i>
+
+						</span>
+
+						<input type="text" class="form-control" id="regTelefono" name="regTelefono" placeholder="Numero Celular" minlength="10" maxlength="10" required>
+
+
+					</div>
+
+				</div>
+
 				<!--==============================================
         		=  Condiciones de uso y politicas de provacidad =
 				==============================================-->
 
 				<div class="checkBox">
 					
-					<label>
+					<label class="custom-control-label" for="regPoliticas">
 						
-						<input id="regTerminos" type="checkbox">
+						<input id="regPoliticas" type="checkbox">
 
-							<small>Al registrarse, acepta nuestras condiciones de uso y políticas de privacidad
+							<small>Al registrarse, usted acepta ser mayor de 18 años además de nuestras condiciones de uso y políticas de privacidad
 
 								<br>
 
-								<a href="//www.iubenda.com/privacy-policy/69909540" class="iubenda-white iubenda-embed" title="Condiciones de uso y políticas de privacidad">Leer más</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+								<a href="//www.iubenda.com/privacy-policy/69909540" class="iubenda-white iubenda-embed" title="Condiciones de uso y políticas de privacidad">Ver más</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 
 							</small>
 
 					</label>
 
 				</div>
+
+				<?php
+
+					$registro = new ControladorUsuarios();
+					$registro -> ctrRegistroUsuario();
+
+				?>
 
 				<input type="submit" class="btn btn-default backColorN btn-block" value="Enviar">
 
