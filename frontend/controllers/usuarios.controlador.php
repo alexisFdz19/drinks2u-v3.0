@@ -52,7 +52,7 @@ class ControladorUsuarios{
 	
 						<center>
 							
-							<!--<img style="padding:20px; width:10%" src="views/">--> <h3 style="font-size: 33px; font-family: 'Merriweather', serif; padding-top: 35px; ">Drinks2u</h3>
+							<!--<img style="padding:20px; width:10%" src="views/">--> <h3 style="font-size: 33px; font-family: Merriweather, serif; padding-top: 35px; ">Drinks2u</h3>
 
 						</center>
 
