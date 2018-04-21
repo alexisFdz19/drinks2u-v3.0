@@ -29,7 +29,63 @@ class ControladorUsuarios{
 				$respuesta = ModeloUsuarios::mdlRegistroUsuario($tabla, $datos);
 
 				if($respuesta == "ok"){
-					
+
+					/*=============================================
+					= Verificación por correo electrónico =
+					=============================================*/
+
+					date_default_timezone_set("America/Cancun");
+
+					$mail = new PHPMailer;
+
+					$mail -> isMail();
+
+					$mail -> setFrom('Bussines_Drinks2u@outlook.com', 'Drinks2u');
+
+					$mail -> addReplyTo('Bussines_Drinks2u@outlook.com', 'Drinks2u');
+
+					$mail -> Subject = "Por Favor verifique su dirección de correo electrónico";
+
+					$mail -> addAddress($_POST["regEmail"]);
+
+					$mail -> msgHTML('<div style="width:100%; background:#eee; position:relative; padding-bottom:40px">
+	
+						<center>
+							
+							<!--<img style="padding:20px; width:10%" src="views/">--> <h3 style="font-size: 33px; font-family: 'Merriweather', serif; padding-top: 35px; ">Drinks2u</h3>
+
+						</center>
+
+						<div style="position:relative; margin:auto; width:600px; background:white; padding:20px">
+						
+							<center>
+							
+							<img style="padding:20px; width:15%" src="views/img/plantilla/icon-email.png">
+
+							<h3 style="font-weight:100; color:#999">VERIFIQUE SU DIRECCIÓN DE CORREO ELECTRÓNICO</h3>
+
+							<hr style="border:1px solid #ccc; width:80%">
+
+							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta de Drinks2u, debe confirmar su dirección de correo electrónico</h4>
+
+							<a href="http://localhost:8080/proyect/drinks2u3/frontend/verificar/124124esf2323sdgse35sf25wersdf3" target="_blank" style="text-decoration:none">
+
+							<div style="line-height:60px; background:#FFEB3B; width:60%; color:black">Verifique su dirección de correo electrónico</div>
+
+							</a>
+
+							<br>
+
+							<hr style="border:1px solid #ccc; width:80%">
+
+							<h5 style="font-weight:100; color:#999">Si no se inscribió en esta cuenta, puede ignorar este correo electrónico y la cuenta se eliminará.</h5>
+
+							</center>
+
+						</div>
+
+					</div>');
+
 					echo '<script> 
 
 						swal({
