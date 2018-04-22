@@ -17,12 +17,15 @@ class ControladorUsuarios{
 
 				$encriptar = crypt($_POST["regPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
+				$encriptarEmail = md5($_POST["regEmail"], '');
+
 				$datos = array("nombre" => $_POST["regUsuario"],
 						    	"password" => $encriptar,
 						    	"email" => $_POST["regEmail"],
 						    	"telefono" => $_POST["regTelefono"],
 						    	"modo" => "directo",
-						    	"verificacion" => 1);
+						    	"verificacion" => 1,
+						    	"emailEncriptado" => $encriptarEmail);
 
 				$tabla = "usuarios";
 
@@ -35,6 +38,8 @@ class ControladorUsuarios{
 					=============================================*/
 
 					date_default_timezone_set("America/Cancun");
+
+					$url = Ruta::ctrRuta();
 
 					$mail = new PHPMailer;
 
@@ -68,7 +73,7 @@ class ControladorUsuarios{
 
 							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta de Drinks2u, debe confirmar su dirección de correo electrónico</h4>
 
-							<a href="http://localhost:8080/proyect/drinks2u3/frontend/verificar/124124esf2323sdgse35sf25wersdf3" target="_blank" style="text-decoration:none">
+							<a href="'.$url.'verificar/'.$encriptarEmail.'" target="_blank" style="text-decoration:none">
 
 							<div style="line-height:60px; background:#FFEB3B; width:60%; color:black">Verifique su dirección de correo electrónico</div>
 
@@ -86,24 +91,51 @@ class ControladorUsuarios{
 
 					</div>');
 
-					echo '<script> 
+					$envio = $mail -> Send();
 
-						swal({
-							  title: "¡Registro exitoso!",
-							  text: "Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["regEmail"].' para continuar con la verificación de su cuenta",
-							  type:"success",
-							  confirmButtonText: "Cerrar",
-							  closeOnConfirm: false
-							},
+					if(!$envio){
+						
+						echo '<script> 
 
-							function(isConfirm){
+								swal({
+									  title: "¡ERROR!",
+									  text: "Ocurrió un problema al enviar la verificación a su bandeja de correo electrónico a '.$_POST["regEmail"].$mail->ErrorInfo.'",
+									  type:"error",
+									  confirmButtonText: "Cerrar",
+									  closeOnConfirm: false
+									},
 
-								if(isConfirm){
-									history.back();
-								}
-						});
+									function(isConfirm){
 
-					</script>';
+										if(isConfirm){
+											history.back();
+										}
+								});
+
+						</script>';
+
+					}else{
+
+						echo '<script> 
+
+							swal({
+								  title: "¡Registro exitoso!",
+								  text: "Por favor revise la bandeja de entrada o la carpeta de SPAM de su correo electrónico '.$_POST["regEmail"].' para continuar con la verificación de su cuenta",
+								  type:"success",
+								  confirmButtonText: "Cerrar",
+								  closeOnConfirm: false
+								},
+
+								function(isConfirm){
+
+									if(isConfirm){
+										history.back();
+									}
+							});
+
+						</script>';
+
+					}
 
 				}
 				
@@ -131,6 +163,34 @@ class ControladorUsuarios{
 			}
 
 		}
+
+	}
+
+	/*=============================================
+	= Mostrar usuarios =
+	=============================================*/
+
+	static public function ctrMostrarUsuario($item, $valor){
+
+		$tabla = "usuarios";
+
+		$respuesta = ModeloUsuarios::mdlMostrarUsuario($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
+	=  Actualizar usuario =
+	=============================================*/
+
+	static public function ctrActualizarUsuario($id, $item, $valor){
+
+		$tabla = "usuarios";
+
+		$respuesta = ModeloUsuarios::mdlActualizarUsuario($tabla, $id, $item, $valor);
+
+		return $respuesta;
 
 	}
 
