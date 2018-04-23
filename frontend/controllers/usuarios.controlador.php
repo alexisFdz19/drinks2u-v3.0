@@ -43,6 +43,8 @@ class ControladorUsuarios{
 
 					$mail = new PHPMailer;
 
+					$mail ->CharSet = 'UTF-8';
+
 					$mail -> isMail();
 
 					$mail -> setFrom('Bussines_Drinks2u@outlook.com', 'Drinks2u');

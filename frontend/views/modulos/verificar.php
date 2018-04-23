@@ -4,24 +4,29 @@
 
 <?php
 
+	$usuarioVerificado = false;
 	$item = "EmailEncriptado";
 	$valor = $rutas[1];
 
 	$respuesta = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 
-	$id = $respuesta["id"];
-	$item2 = "verificacion";
-	$valor2 = 0;
-
-	$respuesta2 = ControladorUsuarios::ctrActualizarUsuario($id, $item2, $valor2);
-
-	$usuarioVerificado = false;
-
-	if($respuesta2 == "ok"){
+	if($valor == $respuesta["emailEncriptado"]){
 		
-		$usuarioVerificado = true;
+		$id = $respuesta["id"];
+		$item2 = "verificacion";
+		$valor2 = 0;
+
+		$respuesta2 = ControladorUsuarios::ctrActualizarUsuario($id, $item2, $valor2);
+
+		if($respuesta2 == "ok"){
+			
+			$usuarioVerificado = true;
+
+		}
 
 	}
+
+	
 
 ?>
 
