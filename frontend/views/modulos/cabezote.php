@@ -54,12 +54,56 @@ $url = Ruta::ctrRuta();
 					<li>
 						<a href="#">Contacto</a>
 					</li>|
-					<li>
-						<a href="#modalIngreso" data-toggle="modal">Ingresa</a>
-					</li>|
-					<li>
-						<a href="#modalRegistro" data-toggle="modal">Registrate</a>
-					</li>
+
+					<?php
+
+						if(isset($_SESSION["validarSesion"])){
+							
+							if($_SESSION["validarSesion"] == "ok"){
+								
+								if($_SESSION["modo"] == "directo"){
+									
+									if($_SESSION["foto"] != ""){
+										
+										echo '<li>
+
+											<img class="img-circle" src="'.$url.$_SESSION["foto"].'" width="10%">
+
+											</li>';
+
+									}else{
+
+										echo '<li><img class="img-circle" src="'.$servidor.'views/img/usuarios/default/anonimo.jpg" width="3%">
+
+											
+
+										</li>';
+
+									}
+
+									echo '<li>|</li>
+										<li><a href="'.$url.'perfil">Ver Perfil</a></li>
+										<li>|</li>
+										<li><a href="'.$url.'salir">Cerrar Sesión</a></li>';
+
+								}
+
+							}
+
+						}else{
+
+
+							echo '<li>
+									<a href="#modalIngreso" data-toggle="modal">Ingresa</a>
+								</li>|
+								<li>
+									<a href="#modalRegistro" data-toggle="modal">Registrate</a>
+								</li>';
+
+						}
+
+					?>
+				
 				</ul>
 
 			</div>
@@ -365,6 +409,116 @@ $url = Ruta::ctrRuta();
 		<div class="modal-footer">
 			
 			¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
+
+		</div>
+		
+	</div>
+
+</div>
+
+<!--==============================================
+        =  Ventana modal de ingreso =
+==============================================-->
+
+<div class="modal fade modalFormulario" id="modalIngreso" role="dialog">
+
+	<div class="modal-content modal-dialog">
+
+		<div class="modal-body modalTitulo">
+
+			<h3 class="backColorYN">INICIA SESION CON TU CUENTA DRINKS2U</h3>
+
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			
+			<!--==============================================
+        	=  Ingreso facebook =
+			==============================================-->
+
+			<div class="col-sm-6 col-xs-12 facebook" id="btnFacebookRegistro">
+				
+				<p>
+					
+					<i class="fa fa-facebook"></i>
+					Inicia sesión con Facebook
+
+				</p>
+
+			</div>
+
+			<!--==============================================
+        	=  Ingreso google =
+			==============================================-->
+
+			<div class="col-sm-6 col-xs-12 google" id="btnGoogleRegistro">
+				
+				<p>
+					
+					<i class="fa fa-google"></i>
+					Inicia sesión con Google
+
+				</p>
+
+			</div>
+
+			<br>
+
+			<!--==============================================
+        	=  formulario de ingreso directo =
+			==============================================-->
+
+			<form method="POST">
+				 
+				<hr>
+
+				<div class="form-group">
+					
+					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-envelope"></i>
+
+						</span>
+
+						<input type="email" class="form-control" id="ingEmail" name="ingEmail" placeholder="Correo Electrónico" required>
+
+
+					</div>
+
+				</div>
+
+				<div class="form-group">
+					
+					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-lock"></i>
+
+						</span>
+
+						<input type="password" class="form-control" id="ingPassword" name="ingPassword" placeholder="Contraseña" required>
+
+					</div>
+
+				</div>
+
+				<?php
+
+					$ingreso = new ControladorUsuarios();
+					$ingreso -> ctrIngresoUsuario();
+
+				?>
+
+				<input type="submit" class="btn btn-default backColorN btn-block btnIngreso" value="Enviar">
+
+			</form>
+
+		</div>
+
+		<div class="modal-footer">
+			
+			¿Aún no estas registrado? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrate</a></strong>
 
 		</div>
 		

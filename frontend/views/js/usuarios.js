@@ -1,4 +1,17 @@
 /*=============================================
+Captura de ruta
+=============================================*/
+
+var rutaActual = location.href;
+
+$(".btnIngreso").click(function(){
+
+	localStorage.setItem("rutaActual", rutaActual);
+
+
+})
+
+/*=============================================
 Formatear los input
 =============================================*/
 
