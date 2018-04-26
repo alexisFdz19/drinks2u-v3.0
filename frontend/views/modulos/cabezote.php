@@ -512,6 +512,14 @@ $url = Ruta::ctrRuta();
 
 				<input type="submit" class="btn btn-default backColorN btn-block btnIngreso" value="Enviar">
 
+				<br>
+
+				<center>
+					
+					<a href="#modalPassword" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
+
+				</center>
+
 			</form>
 
 		</div>
@@ -525,5 +533,65 @@ $url = Ruta::ctrRuta();
 
 	</div>
 	
+</div>
+
+<!--=====================================
+Ventana modal olvido contraseña
+======================================-->
+
+<div class="modal fade modalFormulario" id="modalPassword" role="dialog">
+
+    <div class="modal-content modal-dialog">
+
+        <div class="modal-body modalTitulo">
+
+        	<h3 class="backColorYN">SOLICITUD DE NUEVA CONTRASEÑA</h3>
+
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+        	
+			<!--=====================================
+			olvido contraseña
+			======================================-->
+
+			<form method="post">
+
+				<label class="text-muted">Escribe el correo electrónico con el que estás registrado para enviarte tu nueva contraseña:</label>
+
+				<div class="form-group">
+					
+					<div class="input-group">
+						
+						<span class="input-group-addon">
+							
+							<i class="glyphicon glyphicon-envelope"></i>
+						
+						</span>
+					
+						<input type="email" class="form-control" id="passEmail" name="passEmail" placeholder="Correo Electrónico" required>
+
+					</div>
+
+				</div>			
+
+				<?php
+
+					$password = new ControladorUsuarios();
+					$password -> ctrOlvidoPassword();
+
+				?>
+				
+				<input type="submit" class="btn btn-default backColorN btn-block" value="ENVIAR">	
+
+			</form>
+
+        </div>
+
+        <div class="modal-footer">
+          
+			¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
+
+        </div>
+      
+    </div>
 
 </div>
