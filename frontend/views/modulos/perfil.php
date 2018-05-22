@@ -100,6 +100,12 @@ Perfil
 								
 								<?php
 
+								echo '<input type="hidden" value="'.$_SESSION["id"].'" name="idUsuario">
+									<input type="hidden" value="'.$_SESSION["password"].'" name="passUsuario">
+							      	<input type="hidden" value="'.$_SESSION["foto"].'" name="fotoUsuario" id="fotoUsuario">
+							      	<input type="hidden" value="'.$_SESSION["telefono"].'" name="telefonoUsuario" id="telefonoUsuario">
+							      	<input type="hidden" value="'.$_SESSION["modo"].'" name="modoUsuario" id="modoUsuario">';
+
 									if ($_SESSION["modo"] == "directo"){
 										
 										if ($_SESSION["foto"] != "") {
@@ -195,6 +201,13 @@ Perfil
 							?>
 
 						</div>
+
+						<?php
+
+							$actualizarPerfil = new ControladorUsuarios();
+							$actualizarPerfil->ctrActualizarPerfil();
+
+						?>	
 
 					</form>
 
