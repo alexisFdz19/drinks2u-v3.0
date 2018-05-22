@@ -132,13 +132,22 @@ Perfil
 
 							<?php
 
-								echo '<button class="btn btn-default" id="btnCambtiarFoto">
+								echo '<button type="button" class="btn btn-default" id="btnCambiarFoto">
 
 
 									Cambiar Foto de perfil
+
 									</button>';
 
 							?>
+
+							<div id="subirImagen">
+								
+								<input type="file" class="form-control" name="datosImagen" id="datosImagen">
+								
+								<img class="previsualizar">
+
+							</div>
 
 						</div>
 
@@ -188,7 +197,7 @@ Perfil
 									<div class="input-group">
 								
 										<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-										<input type="text" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe tu nueva contraseña">
+										<input type="password" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe tu nueva contraseña">
 
 									</div>
 

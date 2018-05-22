@@ -525,6 +525,61 @@ class ControladorUsuarios{
 
 		if(isset($_POST["editarNombre"])){
 
+			/*=============================================
+			Validar la imagen
+			=============================================*/
+
+			$ruta = "";
+
+			if(isset($_FILES["datosImagen"]["tmp_name"])){
+
+				/*=============================================
+				Se comprueba si existe ya una imagen en la base de datos
+				=============================================*/
+
+				$directorio = "views/img/usuarios/".$_POST["idUsuario"];
+
+				if(!empty($_POST["fotoUsuario"])){
+
+					unlink($_POST["fotoUsuario"]);
+				
+				}else{
+
+					mkdir($directorio, 0755); // 0755 son los permisos de lectura y escritura
+
+				}
+
+				/*=============================================
+				Se guarda la imagen en su directorio
+				=============================================*/
+
+				$aleatorio = mt_rand(100, 999);
+
+				$ruta = "views/img/usuarios/".$_POST["idUsuario"]."/".$aleatorio.".jpg";
+
+
+				/*=============================================
+				Modificar el tamaño de la foto
+				=============================================*/
+
+				list($ancho, $alto) = getimagesize($_FILES["datosImagen"]["tmp_name"]);
+
+				$nuevoAncho = 500;
+				$nuevoAlto = 500;
+
+				$origen = imagecreatefromjpeg($_FILES["datosImagen"]["tmp_name"]);
+
+				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+				imagejpeg($destino, $ruta);
+
+			}
+
+
+
+
 			if($_POST["editarPassword"] == ""){
 
 				$password = $_POST["passUsuario"];
@@ -539,7 +594,7 @@ class ControladorUsuarios{
 							"email" => $_POST["editarEmail"],
 							"telefono" => $_POST["editarTelefono"],
 							"password" => $password,
-							"foto" => "",
+							"foto" => $ruta,
 							"id" => $_POST["idUsuario"]);
 
 			$tabla = "usuarios";

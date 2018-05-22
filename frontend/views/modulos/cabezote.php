@@ -67,7 +67,7 @@ $url = Ruta::ctrRuta();
 										
 										echo '<li>
 
-											<img class="img-circle" src="'.$url.$_SESSION["foto"].'" width="10%">
+											<img class="img-circle" src="'.$url.$_SESSION["foto"].'" width="3%">
 
 											</li>';
 
