@@ -54,6 +54,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/slide.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/productos.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/infoproducto.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/perfil.css">
 
 
     <!--=====================================
@@ -145,7 +146,7 @@
 
                 include "modulos/infoproducto.php";
 
-            }else if($rutas[0] == "buscador" || $rutas[0] == "verificar" || $rutas[0] == "salir"){
+            }else if($rutas[0] == "buscador" || $rutas[0] == "verificar" || $rutas[0] == "salir" || $rutas[0] == "perfil"){
 
                 include "modulos/".$rutas[0].".php";
 
