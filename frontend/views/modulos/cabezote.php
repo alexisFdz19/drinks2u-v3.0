@@ -268,7 +268,7 @@ $url = Ruta::ctrRuta();
         	=  Registro facebook =
 			==============================================-->
 
-			<div class="col-sm-6 col-xs-12 facebook" id="btnFacebookRegistro">
+			<div class="col-sm-6 col-xs-12 facebook">
 				
 				<p>
 					
@@ -283,7 +283,7 @@ $url = Ruta::ctrRuta();
         	=  Registro google =
 			==============================================-->
 
-			<div class="col-sm-6 col-xs-12 google" id="btnGoogleRegistro">
+			<div class="col-sm-6 col-xs-12 google">
 				
 				<p>
 					
@@ -434,7 +434,7 @@ $url = Ruta::ctrRuta();
         	=  Ingreso facebook =
 			==============================================-->
 
-			<div class="col-sm-6 col-xs-12 facebook" id="btnFacebookRegistro">
+			<div class="col-sm-6 col-xs-12 facebook">
 				
 				<p>
 					
@@ -449,7 +449,7 @@ $url = Ruta::ctrRuta();
         	=  Ingreso google =
 			==============================================-->
 
-			<div class="col-sm-6 col-xs-12 google" id="btnGoogleRegistro">
+			<div class="col-sm-6 col-xs-12 google">
 				
 				<p>
 					
