@@ -78,8 +78,236 @@ Perfil
 			======================================-->
 
 			<div id="pedidos" class="tab-pane fade in active">
-				<h1>Historial de pedidos</h1>
-				<p>Content</p>
+				
+				<div class="panel-group">
+
+					<?php
+
+					$item = "id_usuario";
+					$valor = $_SESSION["id"];
+
+					$pedidos = ControladorUsuarios::ctrMostrarPedidos($item, $valor);
+
+					 if(!$pedidos){
+
+						echo '<div class="col-xs-12 text-center error404">
+				               
+				    		<h1><small>Vaya</small></h1>
+				    
+				    		<h2>Aún no tienes pedidos realizados</h2>
+
+				  		</div>';
+
+					}else{
+
+						foreach ($pedidos as $key => $value1) {
+
+							$ordenar = "fecha";
+							$item = "id";
+							$valor = $value1["id_producto"];
+
+							$productos = ControladorProductos::ctrListarProductos($ordenar, $item, $valor);
+
+							foreach ($productos as $key => $value2) {	
+							
+								echo '<div class="panel panel-default">
+
+										<div class="panel-body">
+
+											<div class="col-md-2 col-sm-6 con-xs-12">
+
+												<figure>
+
+													<img class="img-thumbnail" src="'.$servidor.$value2["portada"].'">
+
+
+												</figure>
+
+											</div>
+
+											<div class="col-sm-6 col-xs-12">
+
+												<h1><small>'.$value2["titulo"].'</small></h1>
+
+												<p>'.$value2["titular"].'</p>';
+
+													if($value1["envio"] == 1){
+
+														echo '<div class="progress">
+
+															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
+																<i class="fa fa-check"></i> Recibido
+															</div>
+
+															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
+																<i class="fa fa-clock-o"></i> Despachado
+															</div>
+
+															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
+																<i class="fa fa-clock-o"></i> Entregado
+															</div>
+
+														</div>';
+
+													}
+
+													if($value1["envio"] == 2){
+
+														echo '<div class="progress">
+
+															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
+																<i class="fa fa-check"></i> Recibido
+															</div>
+
+															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
+																<i class="fa fa-check"></i> Despachado
+															</div>
+
+															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
+																<i class="fa fa-clock-o"></i> Entregado
+															</div>
+
+														</div>';
+
+													}
+
+													if($value1["envio"] == 3){
+
+														echo '<div class="progress">
+
+															<div class="progress-bar progress-bar-info" role="progressbar" style="width:33.33%">
+																<i class="fa fa-check"></i> Recibido
+															</div>
+
+															<div class="progress-bar progress-bar-default" role="progressbar" style="width:33.33%">
+																<i class="fa fa-check"></i> Despachado
+															</div>
+
+															<div class="progress-bar progress-bar-success" role="progressbar" style="width:33.33%">
+																<i class="fa fa-check"></i> Entregado
+															</div>
+
+														</div>';
+
+													}
+
+												echo '<h4 class="pull-left"><small>Pedido el '.substr($value1["fecha"],0,-8).'</small></h4>
+
+												<div class="col-xs-6">
+					
+													<h6>
+														
+														<a class="dropdown-toggle pull-right text-muted" data-toggle="dropdown" href="">
+															
+															<i class="fa fa-plus"></i> Informacion del repartidor
+
+														</a>';
+
+														if ($value1["id_repartidor"] != "") {
+
+															$item = "id";
+															$valor = $value1["id_repartidor"];
+
+															$repartidor = ControladorRepartidor::ctrMostrarRepartidor($item, $valor);
+														
+
+															echo '<ul class="dropdown-menu pull-right btnMostrarRepartidor">';
+
+															if ($value1["envio"] != 3){
+																
+																echo '<li>
+																			
+																			<p>
+																				<i class="fa fa-user"></i>
+																				Nombre: '.$repartidor["nombre"].'
+																			</p>
+
+																		</li>
+
+																		<hr>
+
+																		<li>
+																			
+																			<p>
+																				<i class="fa fa-phone"></i>
+																				Telefono: <a href="tel:'.$repartidor["telefono"].'"> Llamar</a>
+																			</p>
+
+																		</li>
+
+																		<hr>
+
+																		<li>
+																			
+																			<p>
+																				<i class="fa fa-motorcycle"></i>
+																				Vehiculo: '.$repartidor["vehiculo"].'
+																			</p>
+
+																		</li>
+
+																		<hr>
+
+																		<li>
+																			
+																			<p>
+																				<i class="fa fa-road"></i>
+																				Placas: '.$repartidor["placas"].'
+																			</p>
+
+																		</li>
+
+																	</ul>';
+
+															}else{
+
+																echo '
+																<li>
+																			
+																	<p>
+																		<i class="fa fa-user"></i>
+																		Nombre: '.$repartidor["nombre"].'
+																	</p>
+
+																</li>
+
+																<hr>
+
+																<li>
+																			
+																	<p>
+																		<i class="fa fa-check"></i>
+																		Entregado
+																	</p>
+
+																</li>';
+
+															}						
+
+														}
+
+													echo '
+
+													</h6>
+
+												</div>
+																
+											</div>
+
+										</div>
+
+									</div>';
+
+							}
+
+						}
+
+					}
+
+					?>
+
+				</div>
+
 			</div>
 
 			<!--=====================================

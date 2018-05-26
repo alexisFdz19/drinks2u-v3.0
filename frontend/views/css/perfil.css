@@ -25,3 +25,11 @@ Perfil
 #perfil #subirImagen #datosImagen{
 	height:65px;
 }
+
+.btnMostrarRepartidor{
+
+	padding-left: 15px;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+}

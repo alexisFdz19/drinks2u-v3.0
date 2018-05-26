@@ -116,4 +116,24 @@ class ModeloUsuarios{
 
 	}
 
+	/*=============================================
+	Mostrar Pedidos
+	=============================================*/
+
+	static public function mdlMostrarPedidos($tabla, $item, $valor){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetchAll();
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
 }

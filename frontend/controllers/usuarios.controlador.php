@@ -637,4 +637,18 @@ class ControladorUsuarios{
 
 	}
 
+	/*=============================================
+	Mostrar pedidos
+	=============================================*/
+
+	static public function ctrMostrarPedidos($item, $valor){
+
+		$tabla = "pedidos";
+
+		$respuesta = ModeloUsuarios::mdlMostrarPedidos($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
+
 }
