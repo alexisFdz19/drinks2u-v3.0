@@ -400,7 +400,7 @@ $url = Ruta::ctrRuta();
 
 				?>
 
-				<input type="submit" class="btn btn-default backColorN btn-block" value="Enviar">
+				<input type="submit" class="btn btn-default backColorN btn-block" value="Registrarme">
 
 			</form>
 
@@ -510,7 +510,7 @@ $url = Ruta::ctrRuta();
 
 				?>
 
-				<input type="submit" class="btn btn-default backColorN btn-block btnIngreso" value="Enviar">
+				<input type="submit" class="btn btn-default backColorN btn-block btnIngreso" value="Ingresar">
 
 				<br>
 

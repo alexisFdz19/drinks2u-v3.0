@@ -755,4 +755,60 @@ class ControladorUsuarios{
 
 	}
 
+	/*=============================================
+	Eliminar usuario
+	=============================================*/
+
+	public function ctrEliminarUsuario(){
+
+		if(isset($_GET["id"])){
+
+			$tabla1 = "usuarios";		
+			$tabla2 = "comentarios";
+			$tabla3 = "pedidos";
+
+			$id = $_GET["id"];
+
+			if($_GET["foto"] != ""){
+
+				unlink($_GET["foto"]);
+				rmdir('views/img/usuarios/'.$_GET["id"]);
+
+			}
+
+			$respuesta = ModeloUsuarios::mdlEliminarUsuario($tabla1, $id);
+			
+			ModeloUsuarios::mdlEliminarComentarios($tabla2, $id);
+
+			ModeloUsuarios::mdlEliminarPedidos($tabla3, $id);
+
+
+			if($respuesta == "ok"){
+
+		    	$url = Ruta::ctrRuta();
+
+		    	echo'<script>
+
+						swal({
+							  title: "Su cuenta ha sido eliminada",
+							  text: "Debe registrarse nuevamente si desea ingresar",
+							  type: "success",
+							  confirmButtonText: "Cerrar",
+							  closeOnConfirm: false
+						},
+
+						function(isConfirm){
+								 if (isConfirm) {	   
+								   window.location = "'.$url.'salir";
+								  } 
+						});
+
+					  </script>';
+
+		    }
+
+		}
+
+	}
+
 }

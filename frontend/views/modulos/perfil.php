@@ -465,7 +465,7 @@ Perfil
 								
 								<?php
 
-								echo '<input type="hidden" value="'.$_SESSION["id"].'" name="idUsuario">
+								echo '<input type="hidden" value="'.$_SESSION["id"].'" name="idUsuario" id="idUsuario">
 									<input type="hidden" value="'.$_SESSION["password"].'" name="passUsuario">
 							      	<input type="hidden" value="'.$_SESSION["foto"].'" name="fotoUsuario" id="fotoUsuario">
 							      	<input type="hidden" value="'.$_SESSION["telefono"].'" name="telefonoUsuario" id="telefonoUsuario">
@@ -587,6 +587,13 @@ Perfil
 
 					<button class="btn btn-danger btn-md pull-right" id="eliminarUsuario">Eliminar cuenta</button>
 
+					<?php
+
+					$borrarUsuario = new ControladorUsuarios();
+					$borrarUsuario -> ctrEliminarUsuario();
+
+					?>
+
 				</div>
 
 			</div>
@@ -607,7 +614,7 @@ Ventana modal de los comentarios
 		
 		<div class="modal-body modalTitulo">
 			
-			<h3 class="backColor">CALIFICA ESTE PRODUCTO</h3>
+			<h3 class="backColorYN">CALIFICA ESTE PRODUCTO</h3>
 
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -648,7 +655,7 @@ Ventana modal de los comentarios
 
 			  		<br>
 					
-					<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
+					<input type="submit" class="btn btn-default backColor btn-block" value="Calificar">
 
 				</div>
 

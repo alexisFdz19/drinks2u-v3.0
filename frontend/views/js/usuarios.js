@@ -411,3 +411,38 @@ function validarComentario(){
 	return true;
 
 }
+
+/*=============================================
+Eliminar usuario
+=============================================*/
+
+$("#eliminarUsuario").click(function(){
+
+	var id = $("#idUsuario").val();
+
+	if($("#modoUsuario").val() == "directo"){
+
+		if($("#fotoUsuario").val() != ""){
+
+			var foto = $("#fotoUsuario").val();
+
+		}
+
+	}
+
+	swal({
+		  title: "¿Está usted seguro(a) de eliminar su cuenta?",
+		  text: "Al borrar su cuenta no se podrán recuperar los datos",
+		  type: "warning",
+		  showCancelButton: true,
+		  confirmButtonColor: "#DD6B55",
+		  confirmButtonText: "Borrar cuenta",
+		  closeOnConfirm: false
+		},
+		function(isConfirm){
+				 if (isConfirm) {	   
+				    window.location = "index.php?ruta=perfil&id="+id+"&foto="+foto;
+				  } 
+		});
+
+})
