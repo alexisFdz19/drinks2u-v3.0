@@ -651,4 +651,108 @@ class ControladorUsuarios{
 
 	}
 
+	/*=============================================
+	Mostrar comentarios en el perfil
+	=============================================*/
+
+	static public function ctrMostrarComentariosPerfil($datos){
+
+		$tabla = "comentarios";
+
+		$respuesta = ModeloUsuarios::mdlMostrarComentariosPerfil($tabla, $datos);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
+	Actualizar comentarios
+	=============================================*/
+
+	public function ctrActualizarComentario(){
+
+		if(isset($_POST["idComentario"])){
+
+			if(preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["comentario"])){
+
+				if($_POST["comentario"] != ""){
+
+					$tabla = "comentarios";
+
+					$datos = array("id"=>$_POST["idComentario"],
+								   "calificacion"=>$_POST["puntaje"],
+								   "comentario"=>$_POST["comentario"]);
+
+					$respuesta = ModeloUsuarios::mdlActualizarComentario($tabla, $datos);
+
+					if($respuesta == "ok"){
+
+						echo'<script>
+
+								swal({
+									  title: "Gracios por compartirnos su opinión",
+									  text: "Con su ayuda mejoraremos día a día",
+									  type: "success",
+									  confirmButtonText: "Cerrar",
+									  closeOnConfirm: false
+								},
+
+								function(isConfirm){
+										 if (isConfirm) {	   
+										   history.back();
+										  } 
+								});
+
+							  </script>';
+
+					}
+
+				}else{
+
+					echo'<script>
+
+						swal({
+							  title: "Error",
+							  text: "El comentario no puede estar vacío",
+							  type: "error",
+							  confirmButtonText: "Cerrar",
+							  closeOnConfirm: false
+						},
+
+						function(isConfirm){
+								 if (isConfirm) {	   
+								   history.back();
+								  } 
+						});
+
+					  </script>';
+
+				}	
+
+			}else{
+
+				echo'<script>
+
+					swal({
+						  title: "Error",
+						  text: "El comentario no puede llevar caracteres especiales",
+						  type: "error",
+						  confirmButtonText: "Cerrar",
+						  closeOnConfirm: false
+					},
+
+					function(isConfirm){
+							 if (isConfirm) {	   
+							   history.back();
+							  } 
+					});
+
+				  </script>';
+
+			}
+
+		}
+
+	}
+
 }

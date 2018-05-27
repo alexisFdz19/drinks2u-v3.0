@@ -69,6 +69,11 @@
 	cursor: pointer;
 }
 
+.alturaComentarios{
+
+	height: 300px;
+}
+
 /*==============================================
 =    Movil (XS de 320px en adelante)     =
 ==============================================*/
