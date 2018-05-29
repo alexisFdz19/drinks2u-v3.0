@@ -45,9 +45,9 @@ $url = Ruta::ctrRuta();
 			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 registro divNav" align="right">
 				
 				<ul class="ulRegistro">
-					<li>
+					<!--<li>
 						<a href="#">Bebidas</a>
-					</li>|
+					</li>|-->
 					<li>
 						<a href="#">Nosotros</a>
 					</li>|
@@ -82,7 +82,7 @@ $url = Ruta::ctrRuta();
 									}
 
 									echo '<li>|</li>
-										<li><a href="'.$url.'perfil">Ver Perfil</a></li>
+										<li><a href="'.$url.'perfil">Perfil</a></li>
 										<li>|</li>
 										<li><a href="'.$url.'salir">Cerrar Sesión</a></li>';
 
