@@ -592,7 +592,7 @@ Perfil
 
 									<br>
 
-									<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar tus datos</button>
+									<button type="submit" class="btn btn-default backColorN btn-md pull-left">Actualizar tus datos</button>
 
 								';
 

@@ -9,7 +9,7 @@
 
 		public function ctrRuta(){
 
-			return "http://localhost:8080/proyect/drinks2u3/frontend/";
+			return "/proyect/drinks2u3/frontend/";
 
 		}
 
@@ -20,7 +20,7 @@
 
 		public function ctrRutaServidor(){
 
-			return "http://localhost:8080/proyect/drinks2u3/backend/";
+			return "/proyect/drinks2u3/backend/";
 
 		}
 
