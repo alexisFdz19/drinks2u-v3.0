@@ -110,12 +110,28 @@ Tabla del carrito
 			</div>
 
 			<!--=====================================
-			BOTÓN CHECKOUT
+			Checkout
 			======================================-->
 
 			<div class="panel-heading cabeceraCheckout">
-				
-				<button class="btn btn-default backColorN btn-lg pull-right">Realizar pago</button>
+
+				<?php
+
+				if(isset($_SESSION["validarSesion"])){
+
+					if($_SESSION["validarSesion"] == "ok"){
+
+						echo '<a id="btnCheckout" href="#modalCheckout" data-toggle="modal"><button class="btn btn-default backColor btn-lg pull-right">Realizar pago</button></a>';
+
+					}
+
+
+				}else{
+
+					echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default backColor btn-lg pull-right">Realizar pago</button></a>';
+				}
+
+				?>
 
 			</div>
 
