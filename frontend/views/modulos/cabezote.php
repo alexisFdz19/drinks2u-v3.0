@@ -194,7 +194,7 @@ $url = Ruta::ctrRuta();
 					</button>
 				</a>
 
-				<p>Tu Carrito<span class="cantidadcesta"></span><br> MXN $<span class="sumacesta"></span></p>
+				<p>Tu Carrito: <span class="cantidadCesta"></span> Productos<br> MXN $<span class="sumaCesta"></span></p>
 
 			</div>
 

@@ -339,8 +339,17 @@ $url = ruta::ctrRuta();
 				<div class="row">
 					
 					<div class="col-md-6 col-xs-12">
+
+						<?php
+
+						echo '
 						
-						<button class="btn btn-default btn-block btn-lg backColorN">
+						<button class="btn btn-default btn-block btn-lg backColorN 
+						agregarCarrito" idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" title="Agregar al carrito" precio="'.$infoproducto["precio"].'">
+
+						';
+
+						?>
 							
 						Agregar al carrito
 

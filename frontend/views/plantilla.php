@@ -30,7 +30,7 @@
 
     ?>
 
-    <link rel="icon" href="http://localhost/proyect/Drinks2u3/backend/views/img/plantilla/logonav.png">
+    <link rel="icon" href="<?php echo $servidor?>views/img/plantilla/logonav.png">
     
 
     <!--=====================================
@@ -177,6 +177,7 @@
 <script src="<?php echo $url; ?>views/js/buscador.js"></script>
 <script src="<?php echo $url; ?>views/js/infoproducto.js"></script>
 <script src="<?php echo $url; ?>views/js/usuarios.js"></script>
+<script src="<?php echo $url; ?>views/js/carrito-de-compras.js"></script>
 
 </body>
 </html>
