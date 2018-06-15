@@ -83,6 +83,14 @@ header #categorias{
 	color: black;
 }
 
+#tituloCategoria{
+
+	background-color:  #FFD700;
+	border-radius: 2px;
+	color: white;
+	padding: 5px;
+}
+
 /*==============================================
         =  Ventanas modales =
 ==============================================*/
