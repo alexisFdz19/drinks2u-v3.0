@@ -390,6 +390,7 @@ function sumaSubtotales(){
 /*=============================================
 Actualizar cesta al cabiar cantidad
 =============================================*/
+var test;
 function cestaCarrito(cantidadProductos){
 
 	/*=============================================
@@ -423,3 +424,287 @@ function cestaCarrito(cantidadProductos){
 	}
 
 }
+
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+Pasarela de pago
+=============================================*/
+
+$("#btnCheckout").click(function(){
+
+	$(".listaProductos table.tablaProductos tbody").html("");
+
+	var idUsuario = $(this).attr("idUsuario");
+	var titulo = $(".cuerpoCarrito .tituloCarritoCompra");
+	var cantidad = $(".cuerpoCarrito .cantidadItem");
+	var subtotal = $(".cuerpoCarrito .subtotales span");
+
+	/*=============================================
+	Mostrar el subtotal en la pasarela de pago
+	=============================================*/
+
+	var sumaSubTotal = $(".sumaSubTotal span");
+
+	$(".valorSubtotal").html($(sumaSubTotal).html());
+	$(".valorSubtotal").attr("valor",$(sumaSubTotal).html());
+
+
+	/*=============================================
+	Variables array
+	=============================================*/
+
+	for(var i = 0; i < titulo.length; i++){
+
+		var tituloArray = $(titulo[i]).html();
+		var cantidadArray = $(cantidad[i]).val();		
+		var subtotalArray = $(subtotal[i]).html();
+
+		/*=============================================
+		Mostrar los productos a comprar en la pasarela
+		=============================================*/
+
+		$(".listaProductos table.tablaProductos tbody").append('<tr>'+
+															   '<td>'+tituloArray+'</td>'+
+															   '<td>'+cantidadArray+'</td>'+
+															   '<td>$<span class="valorItem" valor="'+subtotalArray+'">'+subtotalArray+'</span></td>'+
+															   '<tr>');
+
+		/*=============================================
+		Capturar datos del JSON y mostrar la Seleccion de la ubicacion
+		=============================================*/
+
+		$.ajax({
+				url:rutaOculta+"views/js/plugins/playa.json",
+				type: "GET",
+				cache: false,
+				contentType: false,
+				processData:false,
+				dataType:"json",
+				success: function(respuesta){
+
+					respuesta.forEach(seleccionarEntrega);
+
+					function seleccionarEntrega(item, index){
+
+						var ubicacion = item.name;
+						var codPostal = item.code;
+						var precioEntrega = item.price;
+
+						$("#seleccionarEntrega").append('<option value="'+precioEntrega+'">'+ubicacion+'</option>');
+
+					}
+
+				}
+
+		})
+
+		/*=============================================
+		Mostrar el precio de la ubicacion seleccionada
+		=============================================*/
+
+		$("#seleccionarEntrega").change(function(){
+
+			$(".alert").remove();
+
+			var precioUbicacionSeleccionada = $(this).val();
+
+			$(".precioEntrega").html('<span class="precioEntregaNumero" valor="'+precioUbicacionSeleccionada+'">'+precioUbicacionSeleccionada+'</span>');
+
+				if ($("#seleccionarEntrega").val() != ""){
+
+					$("#direccionEntrega").show();
+
+				}else{
+
+					$("#direccionEntrega").hide();
+
+				}
+
+				/*=============================================
+				Retornar la divisa a MXN al cambiar ubicacion de nuevo
+				=============================================*/
+
+				$("#cambiarDivisa").val("MXN");
+
+				$(".cambioDivisa").html("MXN");
+
+				$(".valorSubtotal").html((1 * Number($(".valorSubtotal").attr("valor"))).toFixed(2))
+				$(".precioEntregaNumero").html((1 * Number($(".precioEntregaNumero").attr("valor"))).toFixed(2))
+				$(".valorTotalCompra").html((1 * Number($(".valorTotalCompra").attr("valor"))).toFixed(2))
+
+				var valorItem = $(".valorItem");
+
+				for(var i = 0; i < valorItem.length; i++){
+
+					$(valorItem[i]).html((1 * Number($(valorItem[i]).attr("valor"))).toFixed(2))
+
+				}
+
+				/*=============================================
+							Fin
+				=============================================*/	
+
+			sumaTotalCompra(); // Ejecucion de la suma
+
+		})
+
+	}
+
+})
+
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+Suma total de la compra
+=============================================*/
+
+function sumaTotalCompra(){
+
+	
+	var sumaTotalTasas = Number($(".valorSubtotal").html())+
+	                     Number($(".precioEntregaNumero").html());
+
+
+
+	//var chichi = parseInt(sumaTotalTasas);
+	//console.log(parseInt(sumaTotalTasas)+ "  2222")
+	$(".valorTotalCompra").html(sumaTotalTasas.toFixed(2));
+	$(".valorTotalCompra").attr("valor",sumaTotalTasas.toFixed(2));
+
+}
+
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+MÉTODO DE PAGO PARA CAMBIO DE DIVISA
+=============================================*/
+
+var metodoPago = "paypal";
+divisas(metodoPago);
+
+$("input[name='pago']").change(function(){
+
+	var metodoPago = $(this).val();
+
+	divisas(metodoPago);
+
+
+})
+
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+FUNCIÓN PARA EL CAMBIO DE DIVISA
+=============================================*/
+
+function divisas(metodoPago){
+
+	$("#cambiarDivisa").html("");
+
+	if(metodoPago == "paypal"){
+
+		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
+			                       '<option value="USD">USD</option>'+
+			                       '<option value="EUR">EUR</option>')
+
+	}else{
+
+		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
+			                       '<option value="USD">USD</option>')
+
+	}
+
+}
+
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+CAMBIO DE DIVISA
+=============================================*/
+
+var divisaBase = "MXN";
+
+$("#cambiarDivisa").change(function(){
+
+	$(".alert").remove();
+
+	if ($("#seleccionarEntrega").val() == ""){
+
+		$("#cambiarDivisa").after('<div class="alert alert-warning">Debes seleccionar tu ubicacion de entrega</div>')
+
+		return;
+
+	}
+	
+	var divisa = $(this).val();
+
+	$.ajax({
+
+		url: "http://free.currencyconverterapi.com/api/v3/convert?q="+divisaBase+"_"+divisa+"&compact=y", // URL de la API del conversor de divisas
+		type:"GET",
+		cache: false,
+	    contentType: false,
+	    processData: false,
+	    dataType:"jsonp", // jsonp porque es una app de otro servidor para hacer cruce de origen y traer la información
+	    success:function(respuesta){
+   	
+	    	var divisaString = JSON.stringify(respuesta); //Se convierte la respuesta en string
+	    	var conversion = divisaString.substr(18,4); //Quitamos 18 caracteres a la izquierda tomamos solo el valor y lo dejamos en 4 digitos
+	    	//console.log("conversion", conversion);
+
+	    	if(divisa == "MXN"){
+
+	    		conversion = 1;
+	    	}
+
+	    	$(".cambioDivisa").html(divisa);
+
+	    	$(".valorSubtotal").html((Number(conversion) * Number($(".valorSubtotal").attr("valor"))).toFixed(2))
+	    	$(".precioEntregaNumero").html((Number(conversion) * Number($(".precioEntregaNumero").attr("valor"))).toFixed(2))
+	    	$(".valorTotalCompra").html((Number(conversion) * Number($(".valorTotalCompra").attr("valor"))).toFixed(2))
+
+	    	var valorItem = $(".valorItem");
+
+	    	for(var i = 0; i < valorItem.length; i++){
+
+	    		$(valorItem[i]).html((Number(conversion) * Number($(valorItem[i]).attr("valor"))).toFixed(2))
+
+	    	}
+
+	    }
+
+	})	
+
+})
+
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+Botón pagar
+=============================================*/
+
+$(".btnPagar").click(function(){
+
+	if ($("#seleccionarEntrega").val() && $("#direccionEntregaInput").val().length  != 0){
+
+		console.log("PAGAR");
+
+	}else{
+
+		$(".btnPagar").after('<div class="alert alert-warning">Debes seleccionar y escribir tu ubicacion de entrega</div>');
+
+		return;
+
+	}
+
+})

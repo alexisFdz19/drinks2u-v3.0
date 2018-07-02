@@ -118,7 +118,11 @@ Perfil
 
 												<figure>
 
+													<a href="'.$url.$value2["ruta"].'">
+
 													<img class="img-thumbnail" src="'.$servidor.$value2["portada"].'">
+
+													</a>
 
 
 												</figure>

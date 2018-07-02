@@ -395,7 +395,7 @@ $url = ruta::ctrRuta();
 				
 				if($value["comentario"] != ""){
 
-					$cantidad += count($value["id"]);
+					$cantidad++;
 
 				}
 			}
