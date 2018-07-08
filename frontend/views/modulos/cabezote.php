@@ -163,7 +163,7 @@ $url = Ruta::ctrRuta();
 			=            Buscador           =
 			========================================-->
 
-				<div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-12 backColor" id="buscador">
+				<div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-12" id="buscador">
 					
 					<input type="search" name="buscar" class="form-control" placeholder="Busca tu bebida o producto">
 
