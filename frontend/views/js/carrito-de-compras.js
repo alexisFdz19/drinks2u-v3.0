@@ -697,6 +697,12 @@ $(".btnPagar").click(function(){
 
 	if ($("#seleccionarEntrega").val() && $("#direccionEntregaInput").val().length  != 0){
 
+		var direccion = $("#direccionEntregaInput").val();
+		var ubicacion = $("#seleccionarEntrega option:selected").text();
+
+		console.log(ubicacion);
+		console.log(direccion);
+
 		console.log("PAGAR");
 
 	}else{
