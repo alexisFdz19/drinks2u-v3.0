@@ -201,19 +201,21 @@ Pasarela de pago
 
 					<div class="col-xs-12 seleccioneEntrega">
 
+						<p><strong>*Tu direccion exacta de entrega será la dirección que tengas registrada en tu cuenta de PayPal</strong></p>
+
 						<select class="form-control" id="seleccionarEntrega" required>
 						
 							<option value="">Selecciona tu ubicación</option>
 
 						</select>
 
-						<br>
+						<!--<br>
 
 						<div class="col-xs-12" id="direccionEntrega">
 
 							<input type="text" class="form-control" name="direccionEntrega" id="direccionEntregaInput" placeholder="Escribe tu dirección" required>
 
-						</div>
+						</div>-->
 
 					</div>
 					

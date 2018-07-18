@@ -467,8 +467,8 @@ $("#btnCheckout").click(function(){
 		=============================================*/
 
 		$(".listaProductos table.tablaProductos tbody").append('<tr>'+
-															   '<td>'+tituloArray+'</td>'+
-															   '<td>'+cantidadArray+'</td>'+
+															   '<td class="valorTitulo">'+tituloArray+'</td>'+
+															   '<td class="valorCantidad">'+cantidadArray+'</td>'+
 															   '<td>$<span class="valorItem" valor="'+subtotalArray+'">'+subtotalArray+'</span></td>'+
 															   '<tr>');
 
@@ -513,7 +513,7 @@ $("#btnCheckout").click(function(){
 
 			$(".precioEntrega").html('<span class="precioEntregaNumero" valor="'+precioUbicacionSeleccionada+'">'+precioUbicacionSeleccionada+'</span>');
 
-				if ($("#seleccionarEntrega").val() != ""){
+				/*if ($("#seleccionarEntrega").val() != ""){
 
 					$("#direccionEntrega").show();
 
@@ -521,7 +521,7 @@ $("#btnCheckout").click(function(){
 
 					$("#direccionEntrega").hide();
 
-				}
+				}*/
 
 				/*=============================================
 				Retornar la divisa a MXN al cambiar ubicacion de nuevo
@@ -695,19 +695,64 @@ Botón pagar
 
 $(".btnPagar").click(function(){
 
-	if ($("#seleccionarEntrega").val() && $("#direccionEntregaInput").val().length  != 0){
+	if ($("#seleccionarEntrega").val() != 0) /*&& $("#direccionEntregaInput").val().length*/{
 
-		var direccion = $("#direccionEntregaInput").val();
-		var ubicacion = $("#seleccionarEntrega option:selected").text();
+		//var ubicacion = $("#seleccionarEntrega option:selected").text();
+		//var direccion = $("#direccionEntregaInput").val();
+		var divisa = $("#cambiarDivisa").val();
+		var total = $(".valorTotalCompra").html();
+		var envio = $(".precioEntregaNumero").html();
+		var subtotal = $(".valorSubtotal").html();
+		var titulo = $(".valorTitulo");
+		var cantidad = $(".valorCantidad");
+		var valorItem = $(".valorItem");
+		var idProducto = $('.cuerpoCarrito button');
 
-		console.log(ubicacion);
-		console.log(direccion);
+		var tituloArray = [];
+		var cantidadArray = [];
+		var valorItemArray = [];
+		var idProductoArray = [];
 
-		console.log("PAGAR");
+		for(var i = 0; i < titulo.length; i++){
+
+			tituloArray[i] = $(titulo[i]).html();
+			cantidadArray[i] = $(cantidad[i]).html();
+			valorItemArray[i] = $(valorItem[i]).html();
+			idProductoArray[i] = $(idProducto[i]).attr("idProducto");
+
+		}
+
+		var datos = new FormData();
+
+		datos.append("divisa", divisa);
+		datos.append("total", total);
+		datos.append("envio", envio);
+		datos.append("subtotal", subtotal);
+		datos.append("tituloArray", tituloArray);
+		datos.append("cantidadArray", cantidadArray);
+		datos.append("valorItemArray", valorItemArray);
+		datos.append("idProductoArray", idProductoArray);
+
+		$.ajax({
+
+			url:rutaOculta+"ajax/carrito.ajax.php",
+			method:"POST",
+			data: datos,
+			cache: false,
+			contentType: false,
+			processData: false,
+			success:function(respuesta){
+
+				window.location = respuesta;
+
+			}
+
+		})
+
 
 	}else{
 
-		$(".btnPagar").after('<div class="alert alert-warning">Debes seleccionar y escribir tu ubicacion de entrega</div>');
+		$(".btnPagar").after('<div class="alert alert-warning">Debes seleccionar tu ubicacion de entrega</div>');
 
 		return;
 

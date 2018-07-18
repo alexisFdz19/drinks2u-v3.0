@@ -111,11 +111,11 @@ class ControladorProductos{
 	=            Actualizar vista producto        =
 	=============================================*/
 
-	static public function ctrActualizarVistaProducto($datos, $item){
+	static public function ctrActualizarProducto($item1, $valor1, $item2, $valor2){
 
 		$tabla = "productos";
 
-		$respuesta = ModeloProductos::mdlActualizarVistaProducto($tabla, $datos, $item);
+		$respuesta = ModeloProductos::mdlActualizarProducto($tabla, $item1, $valor1, $item2, $valor2);
 
 		return $respuesta;
 

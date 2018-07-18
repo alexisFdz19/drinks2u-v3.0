@@ -12,12 +12,12 @@ class AjaxProductos{
 
 	public function ajaxVistaProducto(){
 
-		$datos = array("valor"=>$this->valor,
-						"ruta"=>$this->ruta);
+		$item1 =$this->item;
+		$valor1 = $this->valor;
+		$item2 = "ruta";
+		$valor2 = $this->ruta;
 
-		$item=$this->item;
-
-		$respuesta = ControladorProductos::ctrActualizarVistaProducto($datos, $item);
+		$respuesta = ControladorProductos::ctrActualizarProducto($item1, $valor1, $item2, $valor2);
 
 		echo $respuesta;
 

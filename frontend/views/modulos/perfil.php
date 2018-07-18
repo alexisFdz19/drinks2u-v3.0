@@ -136,7 +136,7 @@ Perfil
 												<p>'.$value2["titular"].'</p>';
 
 													
-													if($value1["envio"] == 0){
+													if($value1["envio"] == 3){
 
 														echo '<div class="progress">
 
@@ -149,7 +149,7 @@ Perfil
 													}
 
 
-													if($value1["envio"] == 1){
+													if($value1["envio"] == 0){
 
 														echo '<div class="progress">
 
@@ -169,7 +169,7 @@ Perfil
 
 													}
 
-													if($value1["envio"] == 2){
+													if($value1["envio"] == 1){
 
 														echo '<div class="progress">
 
@@ -189,7 +189,7 @@ Perfil
 
 													}
 
-													if($value1["envio"] == 3){
+													if($value1["envio"] == 2){
 
 														echo '<div class="progress">
 
