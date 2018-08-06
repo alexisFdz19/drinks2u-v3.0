@@ -80,6 +80,8 @@ header #categorias{
 
 #headerNav{
 	background-color: #FFEB3B;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 .pixelCategorias, .pixelSubCategoria{
