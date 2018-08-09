@@ -162,8 +162,10 @@
 
             include "modulos/slide.php";
             include "modulos/destacados.php";
-            include "modulos/footer.php";
+
         }
+
+        include "modulos/footer.php";
 
     ?>
 
