@@ -56,6 +56,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/infoproducto.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/perfil.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/carrito-de-compras.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/footer.css">
 
 
     <!--=====================================
@@ -161,6 +162,7 @@
 
             include "modulos/slide.php";
             include "modulos/destacados.php";
+            include "modulos/footer.php";
         }
 
     ?>
