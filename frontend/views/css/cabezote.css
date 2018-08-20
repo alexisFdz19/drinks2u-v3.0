@@ -236,12 +236,18 @@ header #categorias{
 		padding-left: 0px;
 	}
 	header #carrito{
-	padding-left: 70px;
+	padding-left: 50px;
 	}
 
 	.modalFormulario .facebook p{
 
 	margin-right: -15px;
+
+	}
+
+	#imgLogo{
+		
+		width: 100%;
 
 	}
 }
@@ -283,6 +289,13 @@ header #categorias{
 	.modalFormulario .facebook p{
 
 	margin-right: -15px;
+
+	}
+	#imgLogo{
+		
+		width: 120%;
+		padding-top: 10px;
+		padding-left: 10px;
 
 	}
 }
@@ -343,6 +356,11 @@ header #categorias{
 	.modalFormulario .backColorYN{
 
 	font-size: 15px;
+
+	}
+	#imgLogo{
+		
+		padding-left: 65px;
 
 	}
 

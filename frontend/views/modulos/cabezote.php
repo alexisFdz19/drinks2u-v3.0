@@ -130,9 +130,9 @@ $url = Ruta::ctrRuta();
 
 			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="logotipo">
 				
-				<a href="<?php echo $url; ?>" id="logoContainer" class="brandLogo">Drinks2u
+				<a href="<?php echo $url ?>">
 
-					<!--<img src="<?php echo $servidor.$social["logo"]; ?>" class="img-responsive">-->
+					<img src="<?php echo $servidor.'views/img/plantilla/logotipografia.png' ?>" class="img-responsive" width="75%" id="imgLogo" alt="Drinks2u">
 
 
 				</a>
