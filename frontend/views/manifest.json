@@ -3,7 +3,7 @@
 	"short_name": "Drinks2u",
 	"description": "Drinks2u es una aplicación web cuya para comprar bebidas y productos a domicilio a consumidores en Playa del Carmen",
 	"background_color": "#000000",
-	"theme_color": "#FFEB3B",
+	"theme_color": "#000000",
 	"orientation": "portrait",
 	"display": "standalone",
 	"start_url": "../?utm_source=web_app_manifest",
