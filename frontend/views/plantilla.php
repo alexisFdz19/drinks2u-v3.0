@@ -14,6 +14,18 @@
 
     <meta name="keyword" content="Lorem ipsum">
 
+    <!-- Metas y link para PWA -->
+
+    <meta name="theme-color" content="#FFEB3B">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="">
+    <link rel="shortcut icon" type="image/png" href="img/plantilla/logonav2.png">
+    <link rel="apple-touch-icon" href="">
+    <link rel="apple-touch-startup-image" href="img/plantilla/logonav2.png">
+    <link rel="manifest" href="views/manifest.json">
+
     <title>Drinks2u</title>
 
     <?php
@@ -182,6 +194,7 @@
 <script src="<?php echo $url; ?>views/js/infoproducto.js"></script>
 <script src="<?php echo $url; ?>views/js/usuarios.js"></script>
 <script src="<?php echo $url; ?>views/js/carrito-de-compras.js"></script>
+<script src="swins.js"></script>
 
 </body>
 </html>
