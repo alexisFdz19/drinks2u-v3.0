@@ -194,7 +194,7 @@
 <script src="<?php echo $url; ?>views/js/infoproducto.js"></script>
 <script src="<?php echo $url; ?>views/js/usuarios.js"></script>
 <script src="<?php echo $url; ?>views/js/carrito-de-compras.js"></script>
-<script src="swins.js"></script>
+<script src="<?php echo $url; ?>swins.js"></script>
 
 </body>
 </html>
