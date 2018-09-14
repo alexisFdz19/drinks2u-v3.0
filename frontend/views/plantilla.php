@@ -30,7 +30,7 @@
 
     ?>
 
-    <link rel="icon" href="<?php echo $servidor?>views/img/plantilla/logonav2.png">
+    <link rel="icon" href="<?php echo $servidor?>views/img/plantilla/logooficial.png">
     
 
     <!--=====================================
