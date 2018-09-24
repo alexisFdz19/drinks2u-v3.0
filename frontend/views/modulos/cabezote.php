@@ -52,7 +52,7 @@ $url = Ruta::ctrRuta();
 						<a href="#">Nosotros</a>
 					</li>|
 					<li>
-						<a href="#">Contacto</a>
+						<a href="<?php echo $url;?>ayuda-y-contacto">Ayuda y contacto</a>
 					</li>|
 
 					<?php

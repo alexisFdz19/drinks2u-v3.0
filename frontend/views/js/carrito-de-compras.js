@@ -122,7 +122,7 @@ if(localStorage.getItem("listaProductos") != null){
 
 }else{
 
-	$(".cuerpoCarrito").html('<div class="well" style="margin-bottom: 290px;">Aún no tienes productos en tu carrito de compras</div>');
+	$(".cuerpoCarrito").html('<div class="well" style="margin-bottom: 380px;">Aún no tienes productos en tu carrito de compras</div>');
 	$(".sumaCarrito").hide();
 	$(".cabeceraCheckout").hide();
 }
