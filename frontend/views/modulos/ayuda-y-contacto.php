@@ -43,6 +43,26 @@
 <div class="container">
 
 	<div class="row">
+	
+		<div class="col-sm-10 col-xs-12">
+
+			<figure class="banner">
+	
+				<img src="<?php echo $servidor.'views/img/plantilla/contacto2.png' ?>" class="img-responsive" width="100%">
+
+			</figure>
+
+		</div>
+
+		<div class="col-sm-2 col-xs-12">
+
+		
+
+		</div>
+
+	</div>
+
+	<div class="row">
 
 		<div class="col-md-5 col-sm-6 col-xs-12">
 			
@@ -87,5 +107,19 @@
 		</div>
 
 	</div>
+
+	<hr>
+
+	<div class="row">
+
+		<div class="col-xs-12">
+
+			<h1 align="center">Preguntas frecuentes</h1>
+
+		</div>		
+
+	</div>
+
+	<hr>
 
 </div>
