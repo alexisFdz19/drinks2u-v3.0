@@ -513,7 +513,7 @@ $("#btnCheckout").click(function(){
 
 			$(".precioEntrega").html('<span class="precioEntregaNumero" valor="'+precioUbicacionSeleccionada+'">'+precioUbicacionSeleccionada+'</span>');
 
-				/*if ($("#seleccionarEntrega").val() != ""){
+				if ($("#seleccionarEntrega").val() != ""){
 
 					$("#direccionEntrega").show();
 
@@ -521,7 +521,7 @@ $("#btnCheckout").click(function(){
 
 					$("#direccionEntrega").hide();
 
-				}*/
+				}
 
 				/*=============================================
 				Retornar la divisa a MXN al cambiar ubicacion de nuevo
@@ -695,18 +695,28 @@ Botón pagar
 
 $(".btnPagar").click(function(){
 
-	if ($("#seleccionarEntrega").val() != 0) /*&& $("#direccionEntregaInput").val().length*/{
+	if (($("#seleccionarEntrega").val() != 0) && ($("#direccionEntregaInput").val().length !=0)){
 
-		//var ubicacion = $("#seleccionarEntrega option:selected").text();
-		//var direccion = $("#direccionEntregaInput").val();
+		var ubicacion = $("#seleccionarEntrega option:selected").text();
+		//console.log("ubicacion", ubicacion);
+		var direccion = $("#direccionEntregaInput").val();
+		//console.log("direcion", direccion);
 		var divisa = $("#cambiarDivisa").val();
+		//console.log("divisa", divisa);
 		var total = $(".valorTotalCompra").html();
+		//console.log("total", total);
 		var envio = $(".precioEntregaNumero").html();
+		//console.log("envio", envio);
 		var subtotal = $(".valorSubtotal").html();
+		//console.log("subtotal", subtotal);
 		var titulo = $(".valorTitulo");
+		//console.log("titulo", titulo);
 		var cantidad = $(".valorCantidad");
+		//console.log("cantidad", cantidad);
 		var valorItem = $(".valorItem");
+		//console.log("valoritem", valorItem);
 		var idProducto = $('.cuerpoCarrito button');
+		//console.log("idproducto", idProducto);
 
 		var tituloArray = [];
 		var cantidadArray = [];
@@ -722,8 +732,17 @@ $(".btnPagar").click(function(){
 
 		}
 
+		/*
+		console.log("tituloArray", tituloArray);
+		console.log("cantidadArray", cantidadArray);
+		console.log("valoritemarray", valorItemArray);
+		console.log("idproductoarray", idProductoArray);
+		*/
+
 		var datos = new FormData();
 
+		datos.append("ubicacion", ubicacion);
+		datos.append("direccion", direccion);
 		datos.append("divisa", divisa);
 		datos.append("total", total);
 		datos.append("envio", envio);

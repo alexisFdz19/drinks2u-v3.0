@@ -209,13 +209,13 @@ Pasarela de pago
 
 						</select>
 
-						<!--<br>
+						<br>
 
 						<div class="col-xs-12" id="direccionEntrega">
 
 							<input type="text" class="form-control" name="direccionEntrega" id="direccionEntregaInput" placeholder="Escribe tu dirección" required>
 
-						</div>-->
+						</div>
 
 					</div>
 					

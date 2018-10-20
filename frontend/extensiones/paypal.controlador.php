@@ -31,6 +31,7 @@ class Paypal{
 		$item = array();
 		$variosItem = array();
 
+		// Se almacenan en la variable array item los valores de cada producto y finalmente todos se envian en variosItem
 		for($i = 0; $i < count($tituloArray); $i ++){
 
 			$item[$i] = new Item();
@@ -62,7 +63,7 @@ class Paypal{
     	$transaction = new Transaction();
 		$transaction->setAmount($amount)
     				->setItemList($itemList)
-    				->setDescription("Descripción de tu pago")
+    				->setDescription("Pedido Drinks2u")
     				->setInvoiceNumber(uniqid());
 
     	//Agregamos las URL'S después de realizar el pago, o cuando el pago es cancelado

@@ -46,13 +46,11 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
    $datosUsuario = json_decode($datosTransaccion);
 
    $emailComprador = $datosUsuario->payer->payer_info->email;
-   $direccionEntrega = $datosUsuario->payer->payer_info->shipping_address->line1;
-   $ciudad = $datosUsuario->payer->payer_info->shipping_address->city;
-   $estado = $datosUsuario->payer->payer_info->shipping_address->state;
-   $codigoPostal = $datosUsuario->payer->payer_info->shipping_address->postal_code;
+
    $pais = $datosUsuario->payer->payer_info->shipping_address->country_code;
 
-   $direccion = $direccionEntrega.", ".$ciudad.", ".$estado.", ".$codigoPostal;
+   $ubicacion = "Ubicación seleccionada";
+   $direccion = "Dirección escrita";
 
    //Actualizamos la base de datos
    for($i = 0; $i < count($productos); $i++){
@@ -61,6 +59,7 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
    						"idProducto"=>$productos[$i],
    						"metodo"=>"paypal",
    						"email"=>$emailComprador,
+                     "ubicacion"=>$ubicaciovn,
    						"direccion"=>$direccion,
    						"pais"=>$pais);
 
