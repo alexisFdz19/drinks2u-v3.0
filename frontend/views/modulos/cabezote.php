@@ -21,7 +21,7 @@ $url = Ruta::ctrRuta();
 			=      Aqui van las redes sociales     = 
 			=====================================-->
 
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 social">
+			<div class="col-lg-3 col-md-3 col-sm-4 col-12 social">
 
 				<ul id="ulRedes">
 					<li>	
@@ -42,7 +42,7 @@ $url = Ruta::ctrRuta();
 			=            Registro de usuarios       =
 			======================================-->
 			
-			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 registro divNav" align="right">
+			<div class="col-lg-9 col-md-9 col-sm-8 col-12 registro divNav" align="right">
 				
 				<ul class="ulRegistro">
 					<!--<li>
@@ -128,7 +128,7 @@ $url = Ruta::ctrRuta();
 			=            Logotipo Drinks2u            =
 			========================================-->
 
-			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="logotipo">
+			<div class="col-lg-3 col-md-3 col-sm-2 col-12" id="logotipo">
 				
 				<a href="<?php echo $url ?>">
 
@@ -145,13 +145,13 @@ $url = Ruta::ctrRuta();
 			=            Categorias y el buscador            =
 			========================================-->
 
-			<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12" id="divCat">
+			<div class="col-lg-6 col-md-6 col-sm-3 col-12" id="divCat">
 
 			<!--=======================================
 			=            Categorias            =
 			========================================-->
 				
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 backColor" id="btnCategorias">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-12 backColor" id="btnCategorias">
 					<p>Categorias
 						<span class="pull-right">
 							<i class="fa fa-bars" aria-hidden="true"></i>
@@ -163,7 +163,7 @@ $url = Ruta::ctrRuta();
 			=            Buscador           =
 			========================================-->
 
-				<div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-12" id="buscador">
+				<div class="input-group col-lg-8 col-md-8 col-sm-8 col-12" id="buscador">
 					
 					<input type="search" name="buscar" class="form-control" placeholder="Busca tu bebida o producto">
 
@@ -186,7 +186,7 @@ $url = Ruta::ctrRuta();
 			=            Carrito de compras          =
 			========================================-->
 
-			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="carrito">
+			<div class="col-lg-3 col-md-3 col-sm-2 col-12" id="carrito">
 
 				<a href="<?php echo $url;?>carrito-de-compras">
 					<button class="btn btn-default pull-left backColor btnCarrito">
@@ -204,7 +204,7 @@ $url = Ruta::ctrRuta();
 			=        Lista de categorias      =
 		========================================-->
 
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="categorias">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-12" id="categorias">
 
 			<?php
 
@@ -215,7 +215,7 @@ $url = Ruta::ctrRuta();
 
 				foreach ($categorias as $key => $value) {
 
-					echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" id="listaCategorias">
+					echo '<div class="col-lg-2 col-md-3 col-sm-4 col-12" id="listaCategorias">
 
 						<h4 id="tituloCategoria">
 							<a href="'.$url.$value["ruta"].'" class="pixelCategorias">'.$value["categoria"].'</a>
@@ -266,7 +266,7 @@ $url = Ruta::ctrRuta();
         	=  Registro facebook =
 			==============================================-->
 
-			<div class="col-sm-6 col-xs-12 facebook">
+			<div class="col-sm-6 col-12 facebook">
 				
 				<p>
 					
@@ -281,7 +281,7 @@ $url = Ruta::ctrRuta();
         	=  Registro google =
 			==============================================-->
 
-			<div class="col-sm-6 col-xs-12 google">
+			<div class="col-sm-6 col-12 google">
 				
 				<p>
 					
@@ -432,7 +432,7 @@ $url = Ruta::ctrRuta();
         	=  Ingreso facebook =
 			==============================================-->
 
-			<div class="col-sm-6 col-xs-12 facebook">
+			<div class="col-sm-6 col-12 facebook">
 				
 				<p>
 					
@@ -447,7 +447,7 @@ $url = Ruta::ctrRuta();
         	=  Ingreso google =
 			==============================================-->
 
-			<div class="col-sm-6 col-xs-12 google">
+			<div class="col-sm-6 col-12 google">
 				
 				<p>
 					
