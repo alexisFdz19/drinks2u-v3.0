@@ -59,7 +59,7 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
    						"idProducto"=>$productos[$i],
    						"metodo"=>"paypal",
    						"email"=>$emailComprador,
-                     "ubicacion"=>$ubicaciovn,
+                     "ubicacion"=>$ubicacion,
    						"direccion"=>$direccion,
    						"pais"=>$pais);
 
