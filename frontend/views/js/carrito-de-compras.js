@@ -437,6 +437,9 @@ $("#btnCheckout").click(function(){
 
 	$(".listaProductos table.tablaProductos tbody").html("");
 
+	$("#checkPaypal").prop("checked", true);
+	$("#checkEfectivo").prop("checked", false);
+
 	var idUsuario = $(this).attr("idUsuario");
 	var titulo = $(".cuerpoCarrito .tituloCarritoCompra");
 	var cantidad = $(".cuerpoCarrito .cantidadItem");
@@ -593,6 +596,18 @@ $("input[name='pago']").change(function(){
 	var metodoPago = $(this).val();
 
 	divisas(metodoPago);
+
+	if(metodoPago == "efectivo"){
+
+		$(".btnPagar").hide();
+		$(".formEfectivo").show();
+
+	}else{
+
+		$(".btnPagar").show();
+		$(".formEfectivo").hide();
+
+	}
 
 
 })

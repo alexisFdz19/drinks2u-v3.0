@@ -301,6 +301,12 @@ Pasarela de pago
 
 					<div class="clearfix"></div>
 
+					<form action="prueba.php" class="formEfectivo" method="POST" style="display:none">
+
+						<input name="Submit" class="btn btn-block btn-lg btn-default backColorN " type="submit" value="Pagar">	
+								
+					</form>
+
 					<button class="btn btn-block btn-lg btn-default backColorN btnPagar">Pagar</button>
 
 				</div>
