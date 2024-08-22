@@ -18,11 +18,17 @@
 					<ul class="dropdown-menu" role="menu">
 
 					<?php
-						
-						echo '<li><a href="'.$url.$rutas[0].'/1/recientes/'.$rutas[3].'">Más reciente</a></li>
-							  <li><a href="'.$url.$rutas[0].'/1/antiguos/'.$rutas[3].'">Más antiguo</a></li>';
 
+						if (isset($rutas[3])) {
+							echo '<li><a href="'.$url.$rutas[0].'/1/recientes/'.$rutas[3].'">Más reciente</a></li>
+								<li><a href="'.$url.$rutas[0].'/1/antiguos/'.$rutas[3].'">Más antiguo</a></li>';
+						} else {
+							echo '<li><a href="'.$url.$rutas[0].'/1/recientes">Más reciente</a></li>
+								<li><a href="'.$url.$rutas[0].'/1/antiguos">Más antiguo</a></li>';
+						}
+						
 					?>
+
 
 					</ul>
 
@@ -332,7 +338,7 @@
 
 					<?php
 
-						if(count($listaProductos) != 0){
+						if (is_array($listaProductos) && count($listaProductos) != 0){
 
 							$pagProductos = ceil(count($listaProductos)/12);
 

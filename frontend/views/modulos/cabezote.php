@@ -1,8 +1,9 @@
 <?php
 
 
-$servidor = Ruta::ctrRutaServidor();
-$url = Ruta::ctrRuta();
+$ruta = new Ruta();
+
+$servidor = $ruta->ctrRutaServidor();
 
 
 ?>

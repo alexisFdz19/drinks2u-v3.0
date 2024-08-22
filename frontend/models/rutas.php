@@ -1,28 +1,24 @@
 <?php
 
-	class Ruta{
+	class Ruta {
 
 		/*=============================================
 		=            Ruta lado del cliente            =
 		=============================================*/
 
+		public static function ctrRuta() {
 
-		public function ctrRuta(){
-
-			return "http://localhost:8080/proyect/drinks2u3/frontend/"; 
+			return "http://localhost/drinks2u-v3.0/frontend/"; 
 
 		}
-
 
 		/*=============================================
 		=            Ruta lado del servidor            =
 		=============================================*/
 
-		public function ctrRutaServidor(){
+		public static function ctrRutaServidor() {
 
-			return "http://localhost:8080/proyect/drinks2u3/backend/";
+			return "http://localhost/drinks2u-v3.0/backend/";
 
 		}
-
-
 	}

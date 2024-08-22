@@ -18,15 +18,17 @@
 
     <?php
 
-        session_start();
+    session_start();
 
-        $servidor = Ruta::ctrRutaServidor();
+    $ruta = new Ruta();
 
-        /*==============================================
-        = aqui se mantiene fija la ruta del proyecto   =
-        ==============================================*/
+    $servidor = $ruta->ctrRutaServidor();
 
-        $url = Ruta::ctrRuta();
+    /*==============================================
+    = aqui se mantiene fija la ruta del proyecto   =
+    ==============================================*/
+
+    $url = $ruta->ctrRuta();
 
     ?>
 
@@ -102,9 +104,8 @@
 
             $rutaCategorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
-            if($rutas[0] == $rutaCategorias["ruta"]){
-
-                $ruta = $rutas[0];
+            if (is_array($rutaCategorias) && isset($rutaCategorias["ruta"]) && $rutas[0] == $rutaCategorias["ruta"]) {
+            $ruta = $rutas[0];
 
             }
 
@@ -130,11 +131,12 @@
 
             $rutaProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
-            if($rutas[0] == $rutaProductos["ruta"]){
+            if (is_array($rutaProductos) && isset($rutaProductos["ruta"]) && $rutas[0] == $rutaProductos["ruta"]) {
 
-                    $infoProducto = $rutas[0];
-
+                $infoProducto = $rutas[0];
+                
             }
+
 
             /*==============================================
             =      Lista blanca de  URL´s Amigables       =

@@ -14,9 +14,8 @@
 
 			<?php
 
-				$servidor = Ruta::ctrRutaServidor();
-
-				$slide = ControladorSlide::ctrMostrarSlide();
+				$controladorSlide = new ControladorSlide();
+				$slide = $controladorSlide->ctrMostrarSlide();
 
 				foreach ($slide as $key => $value){
 

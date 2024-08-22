@@ -11,9 +11,19 @@
 
 	$banner = ControladorProductos::ctrMostrarBanner($ruta);
 
-	$titulo1 = json_decode($banner["titulo1"],true);
-	$titulo2 = json_decode($banner["titulo2"],true);
-	$titulo3 = json_decode($banner["titulo3"],true);
+	if (is_array($banner)) {
+
+		$titulo1 = json_decode($banner["titulo1"], true);
+		$titulo2 = json_decode($banner["titulo2"], true);
+		$titulo3 = json_decode($banner["titulo3"], true);
+
+	} else {
+
+		// Manejar el caso en que $banner no sea un array
+		$titulo1 = $titulo2 = $titulo3 = null;
+		
+	}
+	
 
 	if($banner != null){
 
